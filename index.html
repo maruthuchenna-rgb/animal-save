@@ -1,0 +1,2515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Animal Welfare Donation Platform</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- Main Stylesheet in asset/css/ -->
+  <link rel="stylesheet" href="asset/css/style.css">
+</head>
+<body id="top">
+
+  <!-- =====================================================================
+       ANIMATED PRELOADER (Animal Welfare Theme)
+       ===================================================================== -->
+  <div id="site-preloader" class="site-preloader" aria-hidden="true">
+
+    <!-- Floating background paw prints -->
+    <span class="pl-paw pl-paw-1" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="pl-paw pl-paw-2" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="pl-paw pl-paw-3" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="pl-paw pl-paw-4" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="pl-paw pl-paw-5" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+    <span class="pl-paw pl-paw-6" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/>
+        <ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/>
+        <ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/>
+        <ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/>
+      </svg>
+    </span>
+
+    <!-- Floating hearts -->
+    <span class="pl-heart pl-heart-1" aria-hidden="true">❤</span>
+    <span class="pl-heart pl-heart-2" aria-hidden="true">🐾</span>
+    <span class="pl-heart pl-heart-3" aria-hidden="true">❤</span>
+    <span class="pl-heart pl-heart-4" aria-hidden="true">🐾</span>
+
+    <!-- Main Preloader Card -->
+    <div class="pl-card">
+
+      <!-- Pulsing outer glow ring -->
+      <div class="pl-ring-outer"></div>
+      <div class="pl-ring-inner"></div>
+
+      <!-- Logo orb -->
+      <div class="pl-logo-orb">
+        <img src="asset/images/stackly_.webp" alt="Stackly Logo" class="pl-logo-img">
+      </div>
+
+      <!-- Animated paw orbit icon -->
+      <div class="pl-orbit-ring">
+        <div class="pl-orbit-paw">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="32" cy="46" rx="14" ry="10" fill="#f79f1a"/>
+            <ellipse cx="15" cy="32" rx="7" ry="9" fill="#f79f1a"/>
+            <ellipse cx="49" cy="32" rx="7" ry="9" fill="#f79f1a"/>
+            <ellipse cx="22" cy="18" rx="6" ry="8" fill="#f79f1a"/>
+            <ellipse cx="42" cy="18" rx="6" ry="8" fill="#f79f1a"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Brand name & tagline -->
+      <div class="pl-brand-text">
+        <span class="pl-script">Animal Welfare</span>
+        <h1 class="pl-title">Stackly Rescue</h1>
+        <p class="pl-tagline">Every paw deserves a loving home...</p>
+      </div>
+
+      <!-- Icon strip (animated) -->
+      <div class="pl-icon-strip">
+        <div class="pl-icon-item pl-icon-d1">
+          <!-- Paw Icon -->
+          <svg class="pl-strip-icon" viewBox="0 0 64 64"><ellipse cx="32" cy="46" rx="14" ry="10" fill="currentColor"/><ellipse cx="15" cy="32" rx="7" ry="9" fill="currentColor"/><ellipse cx="49" cy="32" rx="7" ry="9" fill="currentColor"/><ellipse cx="22" cy="18" rx="6" ry="8" fill="currentColor"/><ellipse cx="42" cy="18" rx="6" ry="8" fill="currentColor"/></svg>
+          <span>Rescue</span>
+        </div>
+        <div class="pl-icon-sep">—</div>
+        <div class="pl-icon-item pl-icon-d2">
+          <!-- Heart / Care Icon -->
+          <svg class="pl-strip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          <span>Care</span>
+        </div>
+        <div class="pl-icon-sep">—</div>
+        <div class="pl-icon-item pl-icon-d3">
+          <!-- Home / Shelter Icon -->
+          <svg class="pl-strip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          <span>Shelter</span>
+        </div>
+        <div class="pl-icon-sep">—</div>
+        <div class="pl-icon-item pl-icon-d4">
+          <!-- Medical / Vet Icon -->
+          <svg class="pl-strip-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/><path d="M11 9h2v4h4v2h-4v4h-2v-4H7v-2h4z"/></svg>
+          <span>Veterinary</span>
+        </div>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="pl-progress-wrap">
+        <div class="pl-progress-bar" id="pl-progress-fill"></div>
+      </div>
+      <p class="pl-loading-text" id="pl-loading-text">Loading your experience...</p>
+
+    </div><!-- /.pl-card -->
+  </div><!-- /#site-preloader -->
+
+  <!-- Preloader CSS + JS inline (before everything else for instant display) -->
+  <style>
+    /* ─── Preloader Base ─── */
+    .site-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #071c19 0%, #0d3830 40%, #14594c 75%, #1e7a68 100%);
+      overflow: hidden;
+      transition: opacity 0.65s ease, visibility 0.65s ease;
+    }
+    .site-preloader.pl-hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    /* ─── Floating Background Paws ─── */
+    .pl-paw {
+      position: absolute;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+    .pl-paw svg { width: 100%; height: 100%; }
+    .pl-paw-1 { width: 120px; height: 120px; top: 8%;  left: 5%;  animation: plDrift 8s ease-in-out infinite; }
+    .pl-paw-2 { width: 80px;  height: 80px;  top: 20%; right: 8%; animation: plDrift 10s ease-in-out infinite 1.5s; }
+    .pl-paw-3 { width: 160px; height: 160px; bottom: 10%; left: 12%; animation: plDrift 7s ease-in-out infinite 0.8s; }
+    .pl-paw-4 { width: 70px;  height: 70px;  bottom: 20%; right: 6%;  animation: plDrift 9s ease-in-out infinite 2.2s; }
+    .pl-paw-5 { width: 100px; height: 100px; top: 50%;  left: 3%;  animation: plDrift 11s ease-in-out infinite 0.3s; }
+    .pl-paw-6 { width: 90px;  height: 90px;  top: 60%; right: 4%; animation: plDrift 6s ease-in-out infinite 1.8s; }
+
+    @keyframes plDrift {
+      0%, 100% { transform: translateY(0px) rotate(-8deg); }
+      50%       { transform: translateY(-28px) rotate(8deg); }
+    }
+
+    /* ─── Floating Hearts / Paw Emojis ─── */
+    .pl-heart {
+      position: absolute;
+      font-size: 22px;
+      opacity: 0;
+      animation: plFloat 4s ease-in-out infinite;
+      pointer-events: none;
+    }
+    .pl-heart-1 { color: rgba(247,159,26,0.7); bottom: 5%; left: 20%;  animation-delay: 0s;   animation-duration: 5s; }
+    .pl-heart-2 { color: rgba(255,255,255,0.5); bottom: 5%; right: 22%; animation-delay: 1.2s; animation-duration: 4.5s; }
+    .pl-heart-3 { color: rgba(247,159,26,0.5); bottom: 5%; left: 45%;  animation-delay: 2.4s; animation-duration: 6s; }
+    .pl-heart-4 { color: rgba(255,255,255,0.4); bottom: 5%; right: 40%; animation-delay: 0.7s; animation-duration: 5.5s; }
+
+    @keyframes plFloat {
+      0%   { transform: translateY(0)   scale(1);    opacity: 0; }
+      20%  { opacity: 0.9; }
+      80%  { opacity: 0.7; }
+      100% { transform: translateY(-100vh) scale(0.6); opacity: 0; }
+    }
+
+    /* ─── Main Card ─── */
+    .pl-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      z-index: 2;
+      animation: plCardIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    @keyframes plCardIn {
+      from { transform: translateY(40px) scale(0.9); opacity: 0; }
+      to   { transform: translateY(0)    scale(1);   opacity: 1; }
+    }
+
+    /* ─── Pulsing Glow Rings ─── */
+    .pl-ring-outer,
+    .pl-ring-inner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      border: 1.5px solid rgba(247,159,26,0.3);
+      animation: plPulseRing 2.8s ease-out infinite;
+      pointer-events: none;
+    }
+    .pl-ring-outer { width: 190px; height: 190px; animation-delay: 0s; }
+    .pl-ring-inner { width: 145px; height: 145px; animation-delay: 0.7s; border-color: rgba(255,255,255,0.15); }
+
+    @keyframes plPulseRing {
+      0%   { transform: translate(-50%,-50%) scale(1);   opacity: 0.6; }
+      70%  { transform: translate(-50%,-50%) scale(1.35); opacity: 0; }
+      100% { transform: translate(-50%,-50%) scale(1.35); opacity: 0; }
+    }
+
+    /* ─── Logo Orb ─── */
+    .pl-logo-orb {
+      width: 108px;
+      height: 108px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      border: 2.5px solid rgba(247,159,26,0.6);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 8px rgba(247,159,26,0.07), 0 20px 48px rgba(0,0,0,0.3);
+      animation: plLogoBob 3.2s ease-in-out infinite;
+      margin-bottom: -8px;
+      overflow: hidden;
+      position: relative;
+      z-index: 3;
+    }
+    @keyframes plLogoBob {
+      0%, 100% { transform: translateY(0);   }
+      50%       { transform: translateY(-8px); }
+    }
+    .pl-logo-img {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(247,159,26,0.5));
+    }
+
+    /* ─── Orbiting Paw ─── */
+    .pl-orbit-ring {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 148px;
+      height: 148px;
+      margin: -74px 0 0 -74px;
+      animation: plOrbit 3.5s linear infinite;
+      pointer-events: none;
+      z-index: 4;
+    }
+    .pl-orbit-paw {
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 28px;
+      height: 28px;
+      background: rgba(247,159,26,0.18);
+      border-radius: 50%;
+      border: 1.5px solid rgba(247,159,26,0.55);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pl-orbit-paw svg { width: 17px; height: 17px; }
+    @keyframes plOrbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    /* ─── Brand Text ─── */
+    .pl-brand-text {
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 28px;
+    }
+    .pl-script {
+      display: block;
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      font-weight: 700;
+      color: #f79f1a;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+      animation: plFadeUp 0.9s ease 0.3s both;
+    }
+    .pl-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin: 0 0 10px 0;
+      animation: plFadeUp 0.9s ease 0.5s both;
+    }
+    .pl-tagline {
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+      animation: plFadeUp 0.9s ease 0.7s both;
+    }
+
+    @keyframes plFadeUp {
+      from { transform: translateY(18px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    /* ─── Icon Strip ─── */
+    .pl-icon-strip {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 32px;
+      animation: plFadeUp 0.9s ease 0.85s both;
+    }
+    .pl-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      color: rgba(255,255,255,0.75);
+      animation: plIconBounce 0.6s ease both;
+    }
+    .pl-icon-d1 { animation-delay: 1.0s; }
+    .pl-icon-d2 { animation-delay: 1.15s; }
+    .pl-icon-d3 { animation-delay: 1.3s; }
+    .pl-icon-d4 { animation-delay: 1.45s; }
+
+    @keyframes plIconBounce {
+      from { transform: translateY(20px) scale(0.7); opacity: 0; }
+      to   { transform: translateY(0)    scale(1);   opacity: 1; }
+    }
+    .pl-strip-icon {
+      width: 26px;
+      height: 26px;
+      fill: currentColor;
+      transition: fill 0.3s ease;
+    }
+    .pl-icon-item:hover .pl-strip-icon { fill: #f79f1a; }
+    .pl-icon-item span {
+      font-family: 'Outfit', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+    }
+    .pl-icon-sep {
+      color: rgba(247,159,26,0.35);
+      font-size: 13px;
+      padding-bottom: 14px;
+    }
+
+    /* ─── Progress Bar ─── */
+    .pl-progress-wrap {
+      width: clamp(260px, 45vw, 380px);
+      height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    .pl-progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #f79f1a 0%, #ffcf6c 100%);
+      border-radius: 999px;
+      box-shadow: 0 0 10px rgba(247,159,26,0.5);
+      transition: width 0.1s linear;
+    }
+    .pl-loading-text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+      margin: 0;
+      letter-spacing: 0.3px;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Prevent scroll during preload */
+    body.is-preloading { overflow: hidden; }
+  </style>
+
+  <script>
+    (function() {
+      document.body.classList.add('is-preloading');
+      var fill = document.getElementById('pl-progress-fill');
+      var txt  = document.getElementById('pl-loading-text');
+      var preloader = document.getElementById('site-preloader');
+
+      var messages = [
+        'Loading your experience...',
+        'Preparing rescue stories...',
+        'Warming up the shelter...',
+        'Almost ready to help animals!'
+      ];
+      var progress = 0;
+      var msgIdx   = 0;
+
+      var interval = setInterval(function() {
+        // Accelerate slightly at the end
+        var step = progress < 80 ? (Math.random() * 5 + 2) : (Math.random() * 10 + 4);
+        progress = Math.min(progress + step, 100);
+        fill.style.width = progress + '%';
+
+        // Rotate message
+        var newIdx = Math.floor(progress / 25);
+        if (newIdx !== msgIdx && newIdx < messages.length) {
+          msgIdx = newIdx;
+          txt.style.opacity = '0';
+          setTimeout(function() {
+            txt.textContent = messages[msgIdx];
+            txt.style.opacity = '1';
+          }, 200);
+        }
+
+        if (progress >= 100) {
+          clearInterval(interval);
+          txt.textContent = '🐾 Welcome! Every life matters.';
+          txt.style.color = 'rgba(247,159,26,0.9)';
+          setTimeout(function() {
+            preloader.classList.add('pl-hidden');
+            document.body.classList.remove('is-preloading');
+          }, 600);
+        }
+      }, 55);
+    })();
+  </script>
+
+  <!-- =====================================================================
+       SITE HEADER (Exact Screenshot Design)
+       ===================================================================== -->
+  <header class="site-header">
+    
+    <!-- Top Announcement Bar -->
+    <div class="top-bar">
+      <div class="top-bar-inner">
+        <div class="top-bar-notice">
+          All are welcome! Rescue & care with us daily – 9:30 & 11:00 AM in person • 9:30 AM online
+        </div>
+        
+        <div class="top-bar-right">
+          <span class="follow-label">Follow Us</span>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.7 5H18V0h-3.808C10.595 0 9 1.583 9 4.615V8z"/></svg>
+            </a>
+            <a href="#" aria-label="X (Twitter)">
+              <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
+          <a href="login.html" class="topbar-portal-btn" style="display:inline-flex;align-items:center;gap:6px;background:rgba(247,159,26,0.18);border:1px solid rgba(247,159,26,0.4);color:var(--accent-gold);padding:4px 12px;border-radius:999px;font-size:12px;font-weight:700;text-decoration:none;transition:all 0.2s ease;">
+            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Portal Login
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slanted Logo Badge (Matches Screenshot Angle & Branding) -->
+    <div class="brand-badge">
+      <a href="index.html" class="brand-logo-link">
+        <img src="asset/images/stackly_.webp" alt="Stackly Logo" class="brand-logo-img">
+      </a>
+    </div>
+
+    <!-- Floating White Main Navbar (Matches Screenshot) -->
+    <div class="nav-bar-container">
+      <nav class="floating-navbar">
+        <ul class="nav-menu">
+          <li class="nav-item active">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="donations.html" class="nav-link">Donations</a>
+          </li>
+          <li class="nav-item">
+            <a href="pricing.html" class="nav-link">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a href="blog.html" class="nav-link">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+        </ul>
+
+        <!-- Right Side Nav Actions: Search, Cart, Donate Now & 9-Dot Button -->
+        <div class="nav-actions">
+          <div class="icon-btn-group">
+            <button class="btn-search" aria-label="Search Platform">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+            </button>
+            <button class="btn-cart" aria-label="Shopping Cart">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="donate-cta-wrap">
+            <a href="login.html" class="btn-login-nav">LOGIN</a>
+            <button class="btn-grid-dots" aria-label="Quick App Drawer Menu">
+              <div class="grid-3x3">
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+            </button>
+          </div>
+
+          <button class="mobile-nav-toggle" aria-label="Toggle Mobile Menu">&#9776;</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       HERO SECTION - 5 WEBP SLIDES WITH INCREASED HEIGHT (Exact Screenshot Match)
+       ===================================================================== -->
+  <section class="hero-slider-section" id="hero">
+    
+    <!-- Organic Dark Curved Accent on Top Left (Matches Screenshot) -->
+    <svg class="hero-deco-topleft" viewBox="0 0 320 280" fill="none">
+      <path d="M-30 -20 C130 30, 80 190, -30 240 Z" fill="#081e1b" opacity="0.8"/>
+      <path d="M-50 10 C150 40, 100 240, -40 280 Z" stroke="#14594c" stroke-width="2.5" fill="none" opacity="0.6"/>
+    </svg>
+
+    <!-- Golden Star Cluster Accents on Top Right (Matches Screenshot) -->
+    <div class="hero-deco-stars">
+      + &nbsp;+<br>
+      + &nbsp;+ &nbsp;+
+    </div>
+
+    <!-- Floating Golden Heart Accent in Mid Section (Matches Screenshot) -->
+    <div class="hero-floating-heart">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="#f79f1a">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+      </svg>
+    </div>
+
+    <!-- 5 Hero Slides Track -->
+    <div class="hero-slider-track">
+      
+      <!-- Slide 1: Rescued Dogs in Nature (Spread Light to Every Soul) -->
+      <div class="hero-slide active">
+        <img src="asset/images/hero-1.webp" alt="Rescued Dogs in Nature" class="slide-bg-img">
+        <div class="slide-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-subtitle">
+              <span class="gold-arrow-line">―◆</span> Give the Gift of Hope
+            </div>
+            <h1 class="hero-title">
+              Spread Light to<br>
+              Every <span class="highlight-text">Soul</span> <span class="hand-heart-badge">🖐️<span class="tiny-inner-heart">🤍</span></span></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2: Rescued Puppy in Loving Hands -->
+      <div class="hero-slide">
+        <img src="asset/images/hero-2.webp" alt="Loving Rescued Puppy Care" class="slide-bg-img">
+        <div class="slide-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-subtitle">
+              <span class="gold-arrow-line">―◆</span> Compassion in Action
+            </div>
+            <h1 class="hero-title">
+              Protect & Care for<br>
+              Every <span class="highlight-text">Life</span> <span class="hand-heart-badge">🐾<span class="tiny-inner-heart">💛</span></span></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3: Rescued Kitten & Cat Safe Haven -->
+      <div class="hero-slide">
+        <img src="asset/images/hero-3.webp" alt="Rescue Kitten Safe Haven" class="slide-bg-img">
+        <div class="slide-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-subtitle">
+              <span class="gold-arrow-line">―◆</span> Safe Havens For All
+            </div>
+            <h1 class="hero-title">
+              A Warm Sanctuary for<br>
+              Every <span class="highlight-text">Pet</span> <span class="hand-heart-badge">🐱<span class="tiny-inner-heart">🤍</span></span></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4: Wildlife Sanctuary Protection -->
+      <div class="hero-slide">
+        <img src="asset/images/hero-4.webp" alt="Wildlife Sanctuary Protection" class="slide-bg-img">
+        <div class="slide-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-subtitle">
+              <span class="gold-arrow-line">―◆</span> Wildlife Protection
+            </div>
+            <h1 class="hero-title">
+              Defend the Gentle<br>
+              Wild <span class="highlight-text">Giants</span> <span class="hand-heart-badge">🐘<span class="tiny-inner-heart">🌿</span></span></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5: Volunteer Hugging Rescued Dog -->
+      <div class="hero-slide">
+        <img src="asset/images/hero-5.webp" alt="Volunteer Hugging Rescue Dog" class="slide-bg-img">
+        <div class="slide-overlay"></div>
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-subtitle">
+              <span class="gold-arrow-line">―◆</span> Heal Their Broken Hearts
+            </div>
+            <h1 class="hero-title">
+              Give Voice to<br>
+              The <span class="highlight-text">Voiceless</span> <span class="hand-heart-badge">🤝<span class="tiny-inner-heart">🐾</span></span></span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider Arrow Controls -->
+    <button class="slider-arrow-btn slider-prev" aria-label="Previous Slide">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button class="slider-arrow-btn slider-next" aria-label="Next Slide">
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <!-- Slider Pagination Dots (5 Slides) -->
+    <div class="slider-dots-container">
+      <button class="slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+      <button class="slider-dot" data-slide="1" aria-label="Slide 2"></button>
+      <button class="slider-dot" data-slide="2" aria-label="Slide 3"></button>
+      <button class="slider-dot" data-slide="3" aria-label="Slide 4"></button>
+      <button class="slider-dot" data-slide="4" aria-label="Slide 5"></button>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CAUSES SECTION (Exact 3rd & 4th Screenshot Design, Style & Colors)
+       Features Automatic Left-Sliding Continuous Carousel
+       ===================================================================== -->
+  <section class="causes-section" id="causes">
+    <div class="container-fluid">
+      
+      <!-- Section Header with Left Yellow Handprint & Right Orange Handprint + Heart (Matches Screenshot 3) -->
+      <div class="causes-header-wrap">
+        
+        <!-- Left Golden Yellow Handprint (Matches Screenshot) -->
+        <svg class="deco-hand-left" viewBox="0 0 100 100" fill="#f79f1a">
+          <ellipse cx="48" cy="68" rx="20" ry="18" transform="rotate(-15 48 68)"/>
+          <path d="M42 54 C35 34, 18 25, 20 18 C22 12, 34 22, 45 44 Z"/>
+          <path d="M48 50 C46 28, 38 12, 42 7 C47 2, 54 18, 54 44 Z"/>
+          <path d="M57 50 C60 28, 62 14, 67 11 C72 8, 72 24, 64 45 Z"/>
+          <path d="M64 54 C72 36, 82 25, 87 24 C92 23, 86 38, 73 54 Z"/>
+          <path d="M34 68 C18 64, 5 62, 4 56 C3 50, 15 54, 30 63 Z"/>
+        </svg>
+
+        <!-- Right Orange Handprint + Floating Heart Outline (Matches Screenshot) -->
+        <div class="deco-hand-right-wrap">
+          <svg class="deco-heart-outline" viewBox="0 0 24 24" fill="none" stroke="#cfdcd8" stroke-width="2">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="rgba(255,255,255,0.75)"/>
+          </svg>
+          <svg class="deco-hand-right" viewBox="0 0 100 100" fill="#f85a38">
+            <ellipse cx="52" cy="68" rx="20" ry="18" transform="rotate(15 52 68)"/>
+            <path d="M58 54 C65 34, 82 25, 80 18 C78 12, 66 22, 55 44 Z"/>
+            <path d="M52 50 C54 28, 62 12, 58 7 C53 2, 46 18, 46 44 Z"/>
+            <path d="M43 50 C40 28, 38 14, 33 11 C28 8, 28 24, 36 45 Z"/>
+            <path d="M36 54 C28 36, 18 25, 13 24 C8 23, 14 38, 27 54 Z"/>
+            <path d="M66 68 C82 64, 95 62, 96 56 C97 50, 85 54, 70 63 Z"/>
+          </svg>
+        </div>
+
+        <!-- Subtitle with Gold Diamond Lines: ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¢ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â  Start donating poor people ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¢ (Matches Screenshot) -->
+        <div class="causes-subtitle-box">
+          <span class="gold-diamond-side">
+            <span class="gold-line"></span>
+            <span class="gold-diamond">◆</span>
+          </span>
+          <span class="causes-script-title">Start donating poor people</span>
+          <span class="gold-diamond-side">
+            <span class="gold-diamond">◆</span>
+            <span class="gold-line"></span>
+          </span>
+        </div>
+
+        <!-- Section Title: See Your Impact Transparent Donation Causes (Matches Screenshot) -->
+        <h2 class="causes-main-title">
+          See You Impact Transparent<br>
+          Donation Causes
+        </h2>
+
+      </div>
+
+      <!-- Automatic Left-Sliding Carousel Track (Matches Screenshot 4 Exactly) -->
+      <div class="causes-carousel-wrapper">
+        <div class="causes-carousel-track">
+          
+          <!-- Card 1: Fighting Animal Hunger with Daily Feeding Drives -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-1.webp" alt="Fighting Animal Hunger with Daily Feeding Drives">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">95%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 95%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $180,000</span>
+              </div>
+              <h3 class="cause-card-heading">Fighting Animal Hunger with Daily Feeding Drives</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <!-- Watermark Heart Outline (Matches Screenshot) -->
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Shelter for Homeless & Rescued Street Animals -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-2.webp" alt="Shelter for Homeless & Rescued Street Animals">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">90%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 90%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Shelter for Homeless & Rescued Street Animals</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Hunger Project: Urgent Care for Abandoned Pets -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-3.webp" alt="Hunger Project: Urgent Care for Abandoned Pets">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">95%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 95%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Hunger Project: Urgent Care for Abandoned Pets</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Providing Veterinary Aid to Stray Animals in Need -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-4.webp" alt="Providing Veterinary Aid to Stray Animals in Need">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">95%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 95%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Providing Veterinary Aid to Stray Animals in Need</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Emergency Surgery & Trauma Care -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-5.webp" alt="Emergency Surgery & Trauma Rehabilitation">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">88%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 88%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $35,200</span>
+                <span class="funding-goal">Goal $40,000</span>
+              </div>
+              <h3 class="cause-card-heading">Emergency Surgery & Trauma Care for Stray Pets</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Wildlife Sanctuary Expansion & Habitat -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-6.webp" alt="Wildlife Sanctuary Expansion & Gentle Giants">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">92%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 92%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $72,400</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Wildlife Sanctuary Expansion & Gentle Giants</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+             <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-1.webp" alt="Fighting Animal Hunger with Daily Feeding Drives">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">95%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 95%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $180,000</span>
+              </div>
+              <h3 class="cause-card-heading">Fighting Animal Hunger with Daily Feeding Drives</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <!-- Watermark Heart Outline (Matches Screenshot) -->
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+            <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-3.webp" alt="Hunger Project: Urgent Care for Abandoned Pets">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">95%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 95%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $50,050</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Hunger Project: Urgent Care for Abandoned Pets</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+           <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-5.webp" alt="Emergency Surgery & Trauma Rehabilitation">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">88%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 88%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $35,200</span>
+                <span class="funding-goal">Goal $40,000</span>
+              </div>
+              <h3 class="cause-card-heading">Emergency Surgery & Trauma Care for Stray Pets</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Wildlife Sanctuary Expansion & Habitat -->
+          <article class="cause-item-card">
+            <div class="cause-card-thumb">
+              <img src="asset/images/cause-6.webp" alt="Wildlife Sanctuary Expansion & Gentle Giants">
+            </div>
+            <div class="cause-card-body">
+              <div class="cause-status-row">
+                <span class="status-label">Donation</span>
+                <span class="status-percentage-badge">92%</span>
+              </div>
+              <div class="cause-progress-track">
+                <div class="cause-progress-fill" style="width: 92%;"></div>
+              </div>
+              <div class="cause-funding-row">
+                <span class="funding-raised">Raised $72,400</span>
+                <span class="funding-goal">Goal $80,000</span>
+              </div>
+              <h3 class="cause-card-heading">Wildlife Sanctuary Expansion & Gentle Giants</h3>
+              <div class="cause-card-bottom">
+                <button class="btn-card-donate-teal trigger-donate-modal">
+                  Donate Now
+                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </button>
+                <svg class="card-heart-watermark" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Controls -->
+      <div class="carousel-nav-controls">
+        <button class="carousel-arrow-btn carousel-btn-prev" aria-label="Previous Causes">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="carousel-arrow-btn carousel-btn-next" aria-label="Next Causes">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CALL TO ACTION BANNER SECTION (Exact Match to User Screenshot)
+       "Giving has never caused anyone to become poor."
+       Theme-related Animal Welfare Content & WebP Background (< 100kb)
+       ===================================================================== -->
+  <section class="cta-banner-section" id="giving-banner">
+    
+    <!-- Background Image & Atmospheric Dark Teal Overlay -->
+    <div class="cta-banner-bg" style="background-image: url('asset/images/cta-banner.webp');"></div>
+    <div class="cta-banner-overlay"></div>
+
+    <!-- Top-Right Decoration: Orange Hand with White Heart Emblem (Exact Match to Screenshot) -->
+    <div class="cta-deco-topright" aria-hidden="true">
+      <svg class="cta-topright-svg" viewBox="0 0 80 80" fill="none">
+        <path d="M48 18 C48 12, 41 8, 35 12 C30 15, 29 20, 48 35 C67 20, 66 15, 61 12 C55 8, 48 12, 48 18 Z" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+        <path d="M26 48 C28 40, 34 34, 40 35 C44 36, 45 40, 42 45 L40 48 C44 43, 50 41, 53 44 C56 47, 54 51, 50 54 L47 56 C51 52, 57 51, 59 54 C61 57, 59 61, 54 64 L50 66 C54 63, 59 64, 60 68 C61 72, 57 75, 51 76 L38 78 C28 78, 20 72, 18 62 L16 52 C15 46, 20 44, 23 48 Z" fill="#f85a38"/>
+      </svg>
+    </div>
+
+    <!-- Bottom-Left Decoration: Donation Jar with Hearts & Hand (Exact Match to Screenshot) -->
+    <div class="cta-deco-jar-wrap" aria-hidden="true">
+      <svg class="cta-deco-jar-svg" viewBox="0 0 220 280" fill="none">
+        <!-- Botanical Foliage Left -->
+        <g opacity="0.9">
+          <path d="M38 270 Q25 210 20 150 Q16 110 32 80" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="22" cy="190" rx="9" ry="5" transform="rotate(-35 22 190)" fill="#ffffff"/>
+          <ellipse cx="14" cy="155" rx="10" ry="5.5" transform="rotate(-40 14 155)" fill="#ffffff"/>
+          <ellipse cx="20" cy="120" rx="9" ry="5" transform="rotate(-30 20 120)" fill="#ffffff"/>
+          <ellipse cx="30" cy="90" rx="8" ry="4.5" transform="rotate(-20 30 90)" fill="#ffffff"/>
+          <ellipse cx="32" cy="170" rx="8" ry="4.5" transform="rotate(30 32 170)" fill="#ffffff"/>
+          <ellipse cx="25" cy="135" rx="8" ry="4.5" transform="rotate(25 25 135)" fill="#ffffff"/>
+        </g>
+        <!-- Botanical Foliage Right -->
+        <g opacity="0.9">
+          <path d="M182 270 Q195 210 200 150 Q204 110 188 80" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <ellipse cx="198" cy="190" rx="9" ry="5" transform="rotate(35 198 190)" fill="#ffffff"/>
+          <ellipse cx="206" cy="155" rx="10" ry="5.5" transform="rotate(40 206 155)" fill="#ffffff"/>
+          <ellipse cx="200" cy="120" rx="9" ry="5" transform="rotate(30 200 120)" fill="#ffffff"/>
+          <ellipse cx="190" cy="90" rx="8" ry="4.5" transform="rotate(20 190 90)" fill="#ffffff"/>
+          <ellipse cx="188" cy="170" rx="8" ry="4.5" transform="rotate(-30 188 170)" fill="#ffffff"/>
+          <ellipse cx="195" cy="135" rx="8" ry="4.5" transform="rotate(-25 195 135)" fill="#ffffff"/>
+        </g>
+        <!-- Arm & Hand dropping heart -->
+        <g>
+          <path d="M-10 40 L45 42 Q60 43 70 48 L75 56 L-10 68 Z" fill="#845ec2" opacity="0.95"/>
+          <ellipse cx="73" cy="52" rx="4" ry="8" fill="#7145b0"/>
+          <path d="M72 49 C82 45, 96 46, 102 52 C108 58, 106 66, 95 68 L86 70 C78 72, 72 65, 72 56 Z" fill="#9c6644"/>
+          <path d="M96 52 C104 53, 112 56, 115 62 C116 66, 112 69, 104 69 C98 69, 93 67, 91 64" fill="#885232"/>
+          <path d="M92 64 C96 66, 102 68, 106 72 C108 75, 106 78, 100 77 C94 76, 90 73, 86 70" fill="#784424"/>
+        </g>
+        <!-- Heart being dropped -->
+        <g transform="translate(94, 66) rotate(14)">
+          <path d="M14 4.5 C14 1, 9 -2, 5 1.5 C2.5 4, 1.5 8, 14 20 C26.5 8, 25.5 4, 23 1.5 C19 -2, 14 1, 14 4.5 Z" fill="#ef4444"/>
+          <path d="M7 3.5 C9 1.5, 12 1.5, 13.5 3.5" stroke="#fca5a5" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+        </g>
+        <!-- Glass Jar Body -->
+        <rect x="54" y="116" width="112" height="148" rx="34" fill="#ffffff" stroke="#5c4636" stroke-width="3.5"/>
+        <path d="M60 132 Q60 122 72 122 L148 122 Q160 122 160 132 L160 234 Q160 256 138 256 L82 256 Q60 256 60 234 Z" fill="#fffaf5"/>
+        <rect x="64" y="98" width="92" height="18" rx="8" fill="#d4b494" stroke="#6e4f32" stroke-width="3"/>
+        <line x1="70" y1="107" x2="150" y2="107" stroke="#947352" stroke-width="2"/>
+        <path d="M68 136 L68 232" stroke="rgba(255,255,255,0.8)" stroke-width="5" stroke-linecap="round"/>
+        <!-- Hearts inside jar -->
+        <path d="M110 148 C110 144, 106 141, 102 144 C99 146, 98 150, 110 162 C122 150, 121 146, 118 144 C114 141, 110 144, 110 148 Z" fill="#e63946"/>
+        <path d="M85 168 C85 163, 80 160, 75 163 C72 166, 71 170, 85 184 C99 170, 98 166, 95 163 C90 160, 85 163, 85 168 Z" fill="#ef4444"/>
+        <path d="M135 172 C135 167, 130 164, 126 167 C122 170, 121 174, 135 188 C149 174, 148 170, 144 167 C140 164, 135 167, 135 172 Z" fill="#f87171"/>
+        <path d="M110 188 C110 181, 103 177, 98 182 C93 186, 92 192, 110 210 C128 192, 127 186, 122 182 C117 177, 110 181, 110 188 Z" fill="#dc2626"/>
+        <path d="M82 208 C82 204, 78 201, 74 204 C71 206, 70 210, 82 222 C94 210, 93 206, 90 204 C86 201, 82 204, 82 208 Z" fill="#f43f5e"/>
+        <path d="M138 210 C138 206, 134 203, 130 206 C127 208, 126 212, 138 224 C150 212, 149 208, 146 206 C142 203, 138 206, 138 210 Z" fill="#ef4444"/>
+        <path d="M110 228 C110 223, 105 220, 101 223 C97 226, 96 230, 110 244 C124 230, 123 226, 119 223 C115 220, 110 223, 110 228 Z" fill="#e11d48"/>
+      </svg>
+    </div>
+
+    <!-- Bottom-Right Decoration: Warm Amber Gradient Wedge (Matches Screenshot) -->
+    <div class="cta-deco-bottomright" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M0 200 L200 0 L200 200 Z" fill="url(#ctaOrangeGradient)"/>
+        <defs>
+          <linearGradient id="ctaOrangeGradient" x1="0" y1="200" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#f79f1a" stop-opacity="0"/>
+            <stop offset="45%" stop-color="#f79f1a" stop-opacity="0.3"/>
+            <stop offset="85%" stop-color="#f85a38" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#a83216" stop-opacity="0.95"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="container">
+      <div class="cta-banner-content">
+        
+        <!-- Subtitle with Golden Diamond Lines: ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¢ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â  Let's Start Something For Them ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¢ -->
+        <div class="cta-subtitle-box">
+          <span class="gold-diamond-side">
+            <span class="gold-line"></span>
+            <span class="gold-diamond">◆</span>
+          </span>
+          <span class="cta-script-title">Let's Start Something For Them</span>
+          <span class="gold-diamond-side">
+            <span class="gold-diamond">◆</span>
+            <span class="gold-line"></span>
+          </span>
+        </div>
+
+        <!-- Main Headline: Giving has never caused anyone to become poor. -->
+        <h2 class="cta-main-title">
+          Giving has never caused anyone<br>
+          to become poor.
+        </h2>
+
+        <!-- Theme-Related Supporting Text -->
+        <p class="cta-desc">
+          Your kindness brings emergency medical surgeries, nourishing meals, and safe shelter to innocent abandoned animals waiting for hope.
+        </p>
+
+        <!-- Golden Pill Button: Start Donate Now ↗ -->
+        <div class="cta-btn-wrap">
+          <button class="btn-cta-donate trigger-donate-modal">
+            Start Donate Now
+            <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="7" y1="17" x2="17" y2="7"></line>
+              <polyline points="7 7 17 7 17 17"></polyline>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       SUCCESS STORY SECTION (Exact Match to User Screenshot 2)
+       Theme-related Animal Welfare Content & WebP Images (< 100kb)
+       ===================================================================== -->
+  <section class="success-story-section" id="success-story">
+    <div class="container">
+      <div class="success-story-grid">
+        
+        <!-- Left Column: Content & Progress Bars -->
+        <div class="success-content-block" data-anim="from-left">
+          
+          <!-- Subtitle with Gold Line & Diamond: ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â¢ÃƒÂ¢Ã¢â‚¬â€Ã¢â‚¬Â  Success Story -->
+          <div class="success-subtitle-box">
+            <span class="gold-diamond-side">
+              <span class="gold-line"></span>
+              <span class="gold-diamond">◆</span>
+            </span>
+            <span class="success-script-title">Success Story</span>
+          </div>
+
+          <!-- Main Headline: Every story is a step toward hope, change, and a better tomorrow. -->
+          <h2 class="success-main-title">
+            Every story is a step toward<br>
+            hope, change, and a better<br>
+            tomorrow.
+          </h2>
+
+          <!-- Theme-Related Story Description -->
+          <p class="success-desc">
+            Aisha and her rescued stray puppy once faced starvation and injury on the streets. Thanks to our generous donors, her community shelter now has emergency surgical aid and every animal receives nourishing food and loving care instead of neglect.
+          </p>
+
+          <!-- Progress / Impact Bars (Matches Screenshot Exactly) -->
+          <div class="success-progress-group">
+            
+            <!-- Progress Bar 1: Animal Rehabilitation 65% -->
+            <div class="success-progress-item">
+              <div class="progress-header-row">
+                <span class="progress-label">Animal Rehabilitation</span>
+                <div class="progress-badge-wrap" style="left: 65%;">
+                  <span class="progress-badge badge-teal">65%</span>
+                  <span class="badge-arrow arrow-teal"></span>
+                </div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-teal" style="width: 65%;"></div>
+              </div>
+            </div>
+
+            <!-- Progress Bar 2: Food & Shelter Project 87% -->
+            <div class="success-progress-item">
+              <div class="progress-header-row">
+                <span class="progress-label">Food & Shelter Project</span>
+                <div class="progress-badge-wrap" style="left: 87%;">
+                  <span class="progress-badge badge-teal">87%</span>
+                  <span class="badge-arrow arrow-teal"></span>
+                </div>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill fill-gold" style="width: 87%;"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- OUR Success Story Button (User Explicit Request) -->
+          <div class="success-btn-wrap">
+            <a href="#about" class="btn-success-story">
+              Our Success Story
+              <svg class="success-btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Dual Photo Collage & 25 Years of Experience Badge -->
+        <div class="success-media-block" data-anim="from-right">
+          <div class="success-media-inner">
+            
+            <!-- Top-Left Image: Soft/Muted Caring Vet Holding Rescued Puppy -->
+            <div class="success-img-wrap-1">
+              <img src="asset/images/success-1.webp" alt="Rescue Volunteer Tenderly Caring for Rescued Stray" class="success-img-1">
+            </div>
+
+            <!-- Right Image: Radiant Happy Adopted Dog in Nature -->
+            <div class="success-img-wrap-2">
+              <img src="asset/images/success-2.webp" alt="Happy Rescued Dog Thriving in Animal Sanctuary" class="success-img-2">
+            </div>
+
+            <!-- Floating Stat Badge: 25 Years of Experience (Matches Screenshot) -->
+            <div class="success-experience-badge">
+              <div class="badge-number">25</div>
+              <div class="badge-text">
+                <span class="badge-sub">Years of</span>
+                <span class="badge-title">Experience</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       STATISTICS COUNTER SECTION (Exact Match to User Screenshot 3)
+       Continuous flow below Success Story section
+       ===================================================================== -->
+  <section class="stats-counter-section" id="impact-stats">
+    <div class="container">
+      <div class="stats-counter-grid">
+        
+        <!-- Counter 1: 2540 Dedicated Volunteers -->
+        <div class="stat-counter-col">
+          <div class="stat-number color-teal">2540</div>
+          <div class="stat-label">Dedicated Volunteers</div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Counter 2: 7.5 K Successful Campaigns -->
+        <div class="stat-counter-col">
+          <div class="stat-number color-gold">7.5 K</div>
+          <div class="stat-label">Successful Campaigns</div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Counter 3: 4.5 K Team Support -->
+        <div class="stat-counter-col">
+          <div class="stat-number color-teal">4.5 K</div>
+          <div class="stat-label">Team Support</div>
+        </div>
+
+        <!-- Vertical Divider -->
+        <div class="stat-divider" aria-hidden="true"></div>
+
+        <!-- Counter 4: 2540+ Monthly Donors -->
+        <div class="stat-counter-col">
+          <div class="stat-number color-gold">2540+</div>
+          <div class="stat-label">Monthly Donors</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       HOW WE MAKE A DIFFERENCE SECTION (Exact Match to User Screenshot 4)
+       Continuous flow below Statistics Counter section
+       3 cards: Emergency Rescue | Medical Care | Forever Homes
+       ===================================================================== -->
+  <section class="howwe-section" id="about">
+
+    <!-- Left Hand+Heart Decoration (Matches Screenshot Left Accent) -->
+    <div class="howwe-deco-left" aria-hidden="true">
+      <svg viewBox="0 0 120 160" fill="none">
+        <!-- Arm -->
+        <rect x="0" y="85" width="62" height="30" rx="14" fill="#f85a38"/>
+        <ellipse cx="60" cy="100" rx="14" ry="14" fill="#f85a38"/>
+        <!-- Fingers -->
+        <path d="M58 88 C56 68, 52 52, 56 44 C60 36, 66 46, 66 68 Z" fill="#f85a38"/>
+        <path d="M68 90 C66 70, 64 54, 68 46 C72 38, 78 50, 76 72 Z" fill="#f85a38"/>
+        <path d="M78 94 C78 74, 78 60, 82 52 C86 44, 90 58, 88 78 Z" fill="#f85a38"/>
+        <path d="M86 102 C88 84, 92 72, 96 68 C100 64, 102 78, 98 96 Z" fill="#f85a38"/>
+        <!-- Heart -->
+        <g transform="translate(38, 28)">
+          <path d="M22 8 C22 2, 14 -2, 9 3 C5 7, 4 14, 22 32 C40 14, 39 7, 35 3 C30 -2, 22 2, 22 8 Z" fill="#ffffff"/>
+          <path d="M12 6 C15 3, 19 3, 21 6" stroke="rgba(255,100,80,0.4)" stroke-width="2" stroke-linecap="round" fill="none"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="container">
+
+      <!-- Section Header: centered, with diamond subtitle + bold heading -->
+      <div class="howwe-header">
+        <!-- Subtitle with Gold Arrow Lines & Diamond -->
+        <div class="howwe-subtitle-box">
+          <span class="howwe-subtitle-line">
+            <span class="howwe-arrow">&#9658;</span>
+            <span class="howwe-gold-line"></span>
+          </span>
+          <span class="howwe-script-title">How We Make a Difference</span>
+          <span class="howwe-subtitle-line reverse">
+            <span class="howwe-gold-line"></span>
+            <span class="howwe-arrow">&#9658;</span>
+          </span>
+        </div>
+
+        <!-- Main Heading -->
+        <h2 class="howwe-main-title">
+          Support Our Mission and<br>
+          Make a Difference
+        </h2>
+      </div>
+
+            <!-- 4 Feature Cards Grid (Exact Match to User Screenshot) -->
+      <div class="howwe-features-grid">
+
+        <!-- Card 1: Education -->
+        <div class="howwe-feature-box" data-anim="from-left">
+          <!-- Heart Watermark -->
+          <svg class="feature-watermark-heart" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 88 C20 62 8 46 8 28 C8 15 18 6 31 6 C40 6 47 11 50 18 C53 11 60 6 69 6 C82 6 92 15 92 28 C92 46 80 62 50 88 Z" fill="rgba(20, 89, 76, 0.04)" stroke="rgba(20, 89, 76, 0.12)" stroke-width="4"/>
+          </svg>
+
+          <!-- Circular Brush Stamp Badge -->
+          <div class="feature-badge-wrap">
+            <svg class="feature-badge-svg" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="35" fill="#14594c"/>
+              <path d="M40 3 A37 37 0 0 1 77 40 A37 37 0 0 1 40 77 A37 37 0 0 1 3 40 A37 37 0 0 1 40 3 Z" stroke="#14594c" stroke-width="2.5" stroke-dasharray="9 4 14 3" opacity="0.6"/>
+              <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <!-- Graduation Cap Icon -->
+              <g transform="translate(18, 19)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="22 4 41 13 22 22 3 13" fill="rgba(255,255,255,0.18)"/>
+                <path d="M10 16.5 V26 C10 32 34 32 34 26 V16.5"/>
+                <path d="M37 15 V30"/>
+                <circle cx="37" cy="31" r="1.5" fill="#ffffff"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h3 class="feature-title">Education</h3>
+
+          <!-- Description -->
+          <p class="feature-desc">
+            Our Education programme is dedicated to animal care education, shelter volunteer training, and fostering compassion across local communities.
+          </p>
+
+          <!-- View Details Link -->
+          <a href="#causes" class="feature-link trigger-donate-modal">
+            View Details <span class="feature-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Card 2: Medical Aid -->
+        <div class="howwe-feature-box anim-delay-1" data-anim="from-left">
+          <!-- Heart Watermark -->
+          <svg class="feature-watermark-heart" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 88 C20 62 8 46 8 28 C8 15 18 6 31 6 C40 6 47 11 50 18 C53 11 60 6 69 6 C82 6 92 15 92 28 C92 46 80 62 50 88 Z" fill="rgba(20, 89, 76, 0.04)" stroke="rgba(20, 89, 76, 0.12)" stroke-width="4"/>
+          </svg>
+
+          <!-- Circular Brush Stamp Badge -->
+          <div class="feature-badge-wrap">
+            <svg class="feature-badge-svg" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="35" fill="#14594c"/>
+              <path d="M40 3 A37 37 0 0 1 77 40 A37 37 0 0 1 40 77 A37 37 0 0 1 3 40 A37 37 0 0 1 40 3 Z" stroke="#14594c" stroke-width="2.5" stroke-dasharray="9 4 14 3" opacity="0.6"/>
+              <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <!-- Medical Aid / Hands with Pills Icon -->
+              <g transform="translate(18, 17)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Pills floating -->
+                <rect x="14" y="5" width="8" height="15" rx="4" transform="rotate(-30 18 12.5)" fill="rgba(255,255,255,0.2)"/>
+                <line x1="11" y1="11" x2="25" y2="11" transform="rotate(-30 18 11)"/>
+                <rect x="25" y="11" width="7" height="13" rx="3.5" transform="rotate(25 28.5 17.5)" fill="rgba(255,255,255,0.2)"/>
+                <!-- Cupping Hand -->
+                <path d="M4 33 C10 29 18 29 26 32 L38 28 C40 27 42 29 40 31 L29 37 C24 40 16 40 10 39 L4 37 Z"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h3 class="feature-title">Medical Aid</h3>
+
+          <!-- Description -->
+          <p class="feature-desc">
+            Our medical aid programme is dedicated to providing emergency surgical care, life-saving vaccinations, and trauma recovery to animals in distress.
+          </p>
+
+          <!-- View Details Link -->
+          <a href="#causes" class="feature-link trigger-donate-modal">
+            View Details <span class="feature-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Card 3: Food & Water -->
+        <div class="howwe-feature-box anim-delay-1" data-anim="from-right">
+          <!-- Heart Watermark -->
+          <svg class="feature-watermark-heart" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 88 C20 62 8 46 8 28 C8 15 18 6 31 6 C40 6 47 11 50 18 C53 11 60 6 69 6 C82 6 92 15 92 28 C92 46 80 62 50 88 Z" fill="rgba(20, 89, 76, 0.04)" stroke="rgba(20, 89, 76, 0.12)" stroke-width="4"/>
+          </svg>
+
+          <!-- Circular Brush Stamp Badge -->
+          <div class="feature-badge-wrap">
+            <svg class="feature-badge-svg" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="35" fill="#14594c"/>
+              <path d="M40 3 A37 37 0 0 1 77 40 A37 37 0 0 1 40 77 A37 37 0 0 1 3 40 A37 37 0 0 1 40 3 Z" stroke="#14594c" stroke-width="2.5" stroke-dasharray="9 4 14 3" opacity="0.6"/>
+              <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <!-- Food & Water Box Icon -->
+              <g transform="translate(19, 18)" stroke="#ffffff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Bottle & Food inside box -->
+                <path d="M11 18 V8 C11 6 15 6 15 8 V18" fill="rgba(255,255,255,0.2)"/>
+                <path d="M19 18 V12 C19 10 25 10 25 12 V18"/>
+                <path d="M28 18 C28 11 34 11 34 18"/>
+                <!-- Box crate outline -->
+                <path d="M5 18 H37 V34 H5 Z" fill="rgba(255,255,255,0.12)"/>
+                <line x1="5" y1="26" x2="37" y2="26"/>
+                <line x1="21" y1="22" x2="21" y2="30"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h3 class="feature-title">Food & Water</h3>
+
+          <!-- Description -->
+          <p class="feature-desc">
+            Providing daily nutritious food bowls, regular feeding drives, and clean water stations for stray street pets and sheltered sanctuary animals.
+          </p>
+
+          <!-- View Details Link -->
+          <a href="#causes" class="feature-link trigger-donate-modal">
+            View Details <span class="feature-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Card 4: Disaster Relief -->
+        <div class="howwe-feature-box" data-anim="from-right">
+          <!-- Heart Watermark -->
+          <svg class="feature-watermark-heart" viewBox="0 0 100 100" fill="none" aria-hidden="true">
+            <path d="M50 88 C20 62 8 46 8 28 C8 15 18 6 31 6 C40 6 47 11 50 18 C53 11 60 6 69 6 C82 6 92 15 92 28 C92 46 80 62 50 88 Z" fill="rgba(20, 89, 76, 0.04)" stroke="rgba(20, 89, 76, 0.12)" stroke-width="4"/>
+          </svg>
+
+          <!-- Circular Brush Stamp Badge -->
+          <div class="feature-badge-wrap">
+            <svg class="feature-badge-svg" viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="35" fill="#14594c"/>
+              <path d="M40 3 A37 37 0 0 1 77 40 A37 37 0 0 1 40 77 A37 37 0 0 1 3 40 A37 37 0 0 1 40 3 Z" stroke="#14594c" stroke-width="2.5" stroke-dasharray="9 4 14 3" opacity="0.6"/>
+              <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,0.22)" stroke-width="1.5" stroke-dasharray="4 3"/>
+              <!-- Disaster Relief / Process Network Icon -->
+              <g transform="translate(19, 18)" stroke="#ffffff" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <!-- Document / central node -->
+                <rect x="6" y="5" width="13" height="15" rx="2" fill="rgba(255,255,255,0.2)"/>
+                <line x1="9" y1="10" x2="16" y2="10"/>
+                <line x1="9" y1="14" x2="14" y2="14"/>
+                <!-- Gear node top-right -->
+                <circle cx="28" cy="11" r="5"/>
+                <path d="M28 8 V6 M28 16 V14 M25 11 H23 M33 11 H31"/>
+                <!-- Connected nodes bottom -->
+                <circle cx="13" cy="29" r="4" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="28" cy="27" r="4" fill="rgba(255,255,255,0.2)"/>
+                <!-- Connecting lines -->
+                <path d="M19 12 H23"/>
+                <path d="M13 20 V25"/>
+                <path d="M28 16 V23"/>
+                <path d="M17 29 H24"/>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Title -->
+          <h3 class="feature-title">Disaster Relief</h3>
+
+          <!-- Description -->
+          <p class="feature-desc">
+            Disaster Relief is an emergency rescue division providing rapid evacuation, veterinary triage, and safe shelter to animals affected by crises.
+          </p>
+
+          <!-- View Details Link -->
+          <a href="#causes" class="feature-link trigger-donate-modal">
+            View Details <span class="feature-arrow">↗</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       AUTOMATIC MOVING MARQUEE TICKER (Exact Match to User Screenshot)
+       Continuous flow below How We Make a Difference section
+       Alternating Solid Black & Golden Outline Typography
+       ===================================================================== -->
+  <section class="marquee-ticker-section" id="theme-ticker" aria-label="Our Mission Focus">
+    <div class="marquee-ticker-track">
+      
+      <!-- Primary Loop -->
+      <div class="marquee-ticker-content">
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Animal Rescue</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Sanctuary</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Medical Care</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Adoption</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Rehabilitation</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Compassion</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Warm Shelter</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Protection</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Daily Nourishment</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Loving Homes</span>
+      </div>
+
+      <!-- Duplicate Loop for Infinite Seamless Scrolling -->
+      <div class="marquee-ticker-content" aria-hidden="true">
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Animal Rescue</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Sanctuary</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Medical Care</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Adoption</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Rehabilitation</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Compassion</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Warm Shelter</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Protection</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item solid">Daily Nourishment</span>
+        <span class="ticker-dot">•</span>
+        <span class="ticker-item outline">Loving Homes</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CAUSES EVENTS SECTION (Continuous)
+       ===================================================================== -->
+  <section class="events-section" id="events" aria-label="Our Causes Events">
+    <!-- Banner with Background Image & Badges -->
+    <div class="events-banner-wrap">
+      <div class="events-banner-bg">
+        <img src="asset/images/events-banner.webp" alt="Animal Welfare Rescue Events" class="events-bg-img" loading="lazy">
+        <div class="events-overlay"></div>
+      </div>
+
+      <div class="events-banner-container">
+        <div class="events-banner-header">
+          <!-- Left: Subtitle & Main Title -->
+          <div class="events-title-col" data-anim="from-left">
+            <div class="events-subtitle-wrap">
+              <span class="events-deco-line"></span>
+              <span class="events-subtitle">Our Causes Events</span>
+            </div>
+            <h2 class="events-main-title">
+              Together, we create lasting<br class="hide-mobile"> change through
+            </h2>
+          </div>
+
+          <!-- Right: Event Quick Info Badges -->
+          <div class="events-badges-col" data-anim="from-right">
+            <!-- Date & Time Badge -->
+            <div class="event-pill-badge">
+              <div class="event-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                  <line x1="16" y1="2" x2="16" y2="6"></line>
+                  <line x1="8" y1="2" x2="8" y2="6"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                </svg>
+              </div>
+              <div class="event-badge-text">
+                <strong class="badge-title">25-28 October 2025</strong>
+                <span class="badge-sub">10:00 AM – 2.00 PM</span>
+              </div>
+            </div>
+
+            <!-- Location Badge -->
+            <div class="event-pill-badge">
+              <div class="event-badge-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="event-badge-text">
+                <strong class="badge-title">Mine Arena Banq Hall</strong>
+                <span class="badge-sub">23rd Villalba, Madrid, Spain</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Overlapping Floating Navigation Days Pill Container -->
+      <div class="events-tabs-outer-wrap">
+        <div class="events-tabs-pill" role="tablist" aria-label="Event Schedule Days">
+          <button class="event-tab-item active" role="tab" aria-selected="true" data-tab="day-1">
+            <span class="tab-day">Day 01</span>
+            <span class="tab-date">Dec 25, 2025</span>
+          </button>
+          <div class="tab-divider"></div>
+          <button class="event-tab-item" role="tab" aria-selected="false" data-tab="day-2">
+            <span class="tab-day">Day 02</span>
+            <span class="tab-date">Dec 26, 2025</span>
+          </button>
+          <div class="tab-divider"></div>
+          <button class="event-tab-item" role="tab" aria-selected="false" data-tab="day-3">
+            <span class="tab-day">Day 03</span>
+            <span class="tab-date">Dec 27, 2025</span>
+          </button>
+          <div class="tab-divider"></div>
+          <button class="event-tab-item" role="tab" aria-selected="false" data-tab="day-4">
+            <span class="tab-day">Day 04</span>
+            <span class="tab-date">Dec 28, 2025</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Events 4-Item Photo Gallery Cards Grid -->
+    <div class="events-gallery-wrap">
+      <div class="container-fluid events-gallery-container">
+        <div class="events-cards-grid">
+          <!-- Card 1 -->
+          <div class="event-photo-card" data-anim="from-left">
+            <div class="event-card-media">
+              <img src="asset/images/event-1.webp" alt="Rescued Street Puppy in Sanctuary" class="event-card-img" loading="lazy">
+              <span class="event-date-badge">21 Sep, 2026</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="event-photo-card anim-delay-1" data-anim="from-left">
+            <div class="event-card-media">
+              <img src="asset/images/event-2.webp" alt="Volunteer Comforting Rescued Dog" class="event-card-img" loading="lazy">
+              <span class="event-date-badge">21 Sep, 2026</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="event-photo-card anim-delay-1" data-anim="from-right">
+            <div class="event-card-media">
+              <img src="asset/images/event-3.webp" alt="Playful Rescued Puppies at Ranch" class="event-card-img" loading="lazy">
+              <span class="event-date-badge">21 Sep, 2026</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="event-photo-card" data-anim="from-right">
+            <div class="event-card-media">
+              <img src="asset/images/event-4.webp" alt="Veterinary Medical Treatment for Rescued Animal" class="event-card-img" loading="lazy">
+              <span class="event-date-badge">21 Sep, 2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       OUR TEAM MEMBER SECTION (Continuous)
+       ===================================================================== -->
+  <section class="team-section" id="team" aria-label="Our Team Members">
+    <div class="team-container">
+      
+      <!-- Top Left Animated Golden Ribbon Heart Doodle -->
+      <div class="team-deco-doodle" aria-hidden="true">
+        <svg viewBox="0 0 170 120" fill="none" class="doodle-heart-svg">
+          <path d="M 15 2 C 28 35, 45 88, 62 70 C 72 55, 68 35, 55 42 C 45 49, 52 74, 80 82 C 115 90, 135 60, 145 68 C 150 72, 146 88, 155 92 C 160 94, 166 84, 163 76 C 158 66, 142 66, 146 54 C 149 46, 157 48, 161 54 C 166 62, 158 75, 148 85" 
+                stroke="#f79f1a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Top Right Floating Brand Caring-Hand Heart Stamp Badge -->
+      <div class="team-deco-stamp" aria-hidden="true">
+        <div class="team-heart-wrap">
+          <!-- Monochrome Heart Mask with Compassion Texture -->
+          <svg viewBox="0 0 120 110" class="team-stamp-heart-svg">
+            <defs>
+              <clipPath id="teamHeartClip">
+                <path d="M60 100 C60 100 15 72 8 40 C2 16 22 4 44 12 C52 15 57 21 60 26 C63 21 68 15 76 12 C98 4 118 16 112 40 C105 72 60 100 60 100 Z"/>
+              </clipPath>
+            </defs>
+            <path d="M60 100 C60 100 15 72 8 40 C2 16 22 4 44 12 C52 15 57 21 60 26 C63 21 68 15 76 12 C98 4 118 16 112 40 C105 72 60 100 60 100 Z" fill="#202927"/>
+            <image href="asset/images/howwe-2.webp" width="120" height="110" preserveAspectRatio="xMidYMid slice" clip-path="url(#teamHeartClip)" filter="grayscale(100%) contrast(1.15) brightness(0.9)"/>
+          </svg>
+          <!-- Golden Hand Supporting Heart -->
+          <svg viewBox="0 0 80 80" class="team-stamp-hand-svg" fill="#f79f1a">
+            <path d="M12 60 C12 60 18 42 32 30 C38 25 46 22 52 24 C56 26 55 31 48 34 C40 37 34 42 28 50 C38 42 50 36 60 38 C64 39 63 43 57 46 C48 50 40 55 35 62 C42 57 52 52 61 54 C64 55 63 58 58 60 C48 64 36 68 28 72 C22 75 14 70 12 60 Z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Center Header Content -->
+      <div class="team-header-box">
+        <!-- Subtitle with Golden Diamond Lines -->
+        <div class="team-subtitle-wrap">
+          <span class="gold-diamond-side">
+            <span class="gold-line"></span>
+            <span class="gold-diamond">◆</span>
+          </span>
+          <span class="team-script-title">Our Team Member</span>
+          <span class="gold-diamond-side">
+            <span class="gold-diamond">◆</span>
+            <span class="gold-line"></span>
+          </span>
+        </div>
+
+        <!-- Section Main Title -->
+        <h2 class="team-main-title">
+          We Best To Your Provide of<br>
+          Team Member
+        </h2>
+      </div>
+
+      <!-- Team Members Grid Container -->
+      <div class="team-cards-grid" id="teamCardsGrid">
+        <!-- Team Card 1 -->
+        <div class="team-card" data-anim="from-left">
+          <div class="team-card-inner">
+            <div class="team-card-media-wrap">
+              <div class="team-card-photo">
+                <img src="asset/images/team-1.webp" alt="Christon Smith - Animal Rescue Volunteer" class="team-img" loading="lazy">
+              </div>
+              <!-- Floating Social Icons Column -->
+              <div class="team-social-col">
+                <a href="#facebook" class="team-social-btn" aria-label="Facebook">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                </a>
+                <a href="#twitter" class="team-social-btn" aria-label="Twitter">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="#linkedin" class="team-social-btn" aria-label="LinkedIn">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#youtube" class="team-social-btn" aria-label="YouTube">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </a>
+              </div>
+            </div>
+            <!-- Member Info -->
+            <div class="team-card-info">
+              <h3 class="team-member-name">Christon Smith</h3>
+              <span class="team-member-role">Volunteer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 2 -->
+        <div class="team-card anim-delay-1" data-anim="from-left">
+          <div class="team-card-inner">
+            <div class="team-card-media-wrap">
+              <div class="team-card-photo">
+                <img src="asset/images/team-2.webp" alt="Rosalina D. - Animal Welfare Volunteer" class="team-img" loading="lazy">
+              </div>
+              <!-- Floating Social Icons Column -->
+              <div class="team-social-col">
+                <a href="#facebook" class="team-social-btn" aria-label="Facebook">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                </a>
+                <a href="#twitter" class="team-social-btn" aria-label="Twitter">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="#linkedin" class="team-social-btn" aria-label="LinkedIn">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#youtube" class="team-social-btn" aria-label="YouTube">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </a>
+              </div>
+            </div>
+            <!-- Member Info -->
+            <div class="team-card-info">
+              <h3 class="team-member-name">Rosalina D.</h3>
+              <span class="team-member-role">Volunteer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 3 -->
+        <div class="team-card anim-delay-1" data-anim="from-right">
+          <div class="team-card-inner">
+            <div class="team-card-media-wrap">
+              <div class="team-card-photo">
+                <img src="asset/images/team-3.webp" alt="David Smith - Animal Sanctuary Specialist" class="team-img" loading="lazy">
+              </div>
+              <!-- Floating Social Icons Column -->
+              <div class="team-social-col">
+                <a href="#facebook" class="team-social-btn" aria-label="Facebook">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                </a>
+                <a href="#twitter" class="team-social-btn" aria-label="Twitter">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="#linkedin" class="team-social-btn" aria-label="LinkedIn">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#youtube" class="team-social-btn" aria-label="YouTube">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </a>
+              </div>
+            </div>
+            <!-- Member Info -->
+            <div class="team-card-info">
+              <h3 class="team-member-name">David Smith</h3>
+              <span class="team-member-role">Volunteer</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Card 4 -->
+        <div class="team-card" data-anim="from-right">
+          <div class="team-card-inner">
+            <div class="team-card-media-wrap">
+              <div class="team-card-photo">
+                <img src="asset/images/team-4.webp" alt="Labonno lia - Animal Foster Coordinator" class="team-img" loading="lazy">
+              </div>
+              <!-- Floating Social Icons Column -->
+              <div class="team-social-col">
+                <a href="#facebook" class="team-social-btn" aria-label="Facebook">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+                </a>
+                <a href="#twitter" class="team-social-btn" aria-label="Twitter">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                </a>
+                <a href="#linkedin" class="team-social-btn" aria-label="LinkedIn">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+                </a>
+                <a href="#youtube" class="team-social-btn" aria-label="YouTube">
+                  <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                </a>
+              </div>
+            </div>
+            <!-- Member Info -->
+            <div class="team-card-info">
+              <h3 class="team-member-name">Labonno lia</h3>
+              <span class="team-member-role">Volunteer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom-Left Decorative Floating Orange Caring Hand & Heart -->
+      <div class="team-deco-bottom-hand" aria-hidden="true">
+        <svg viewBox="0 0 120 120" class="team-bottom-hand-svg">
+          <!-- Heart outline -->
+          <path d="M60 95 C60 95 20 70 12 40 C6 18 24 8 44 14 C52 17 57 23 60 27 C63 23 68 17 76 14 C96 8 114 18 108 40 C100 70 60 95 60 95 Z" 
+                fill="none" stroke="#d5dedb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Orange Caring Hand -->
+          <path d="M8 82 C16 68 28 58 40 50 C44 47 48 49 46 54 C42 60 36 67 32 74 C40 68 50 63 56 65 C60 66 59 70 54 74 C46 80 38 86 35 94 C42 88 50 84 56 86 C60 87 59 90 54 92 C44 96 32 102 24 105 C18 107 10 98 8 82 Z" 
+                fill="#f85a38"/>
+        </svg>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       CLIENT FEEDBACK / TESTIMONIALS SECTION (Single Integrated Section)
+       ===================================================================== -->
+  <section class="feedback-section" id="testimonials" aria-label="Client Feedback - Testimonials">
+    <div class="feedback-container">
+
+      <!-- Top-Left Tiny Golden Diamond Deco (matches screenshot) -->
+      <div class="feedback-deco-topdiamond" aria-hidden="true">
+        <svg viewBox="0 0 30 30" width="22" height="22" fill="#f79f1a">
+          <path d="M15 0 L20 10 L30 10 L22 18 L25 30 L15 23 L5 30 L8 18 L0 10 L10 10 Z"/>
+        </svg>
+      </div>
+
+      <!-- Header Row: Left title + Right Trustpilot rating -->
+      <div class="feedback-header-row">
+
+        <!-- Left: Subtitle + Heading -->
+        <div class="feedback-title-col">
+          <div class="feedback-subtitle-wrap">
+            <span class="feedback-deco-arrow">
+              <svg width="42" height="10" viewBox="0 0 42 10" fill="none">
+                <line x1="0" y1="5" x2="34" y2="5" stroke="#f79f1a" stroke-width="2"/>
+                <polyline points="29,1 38,5 29,9" stroke="#f79f1a" stroke-width="2" fill="none"/>
+              </svg>
+            </span>
+            <span class="feedback-script-title">Client Feedback</span>
+          </div>
+          <h2 class="feedback-main-title">Real feedback, Real results</h2>
+        </div>
+
+        <!-- Right: Trustpilot Rating Block -->
+        <div class="feedback-rating-col">
+          <span class="feedback-rating-number">4.8</span>
+          <div class="feedback-rating-meta">
+            <div class="feedback-stars">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5a800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5a800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5a800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5a800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#f5a800"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            </div>
+            <div class="feedback-trustpilot-badge">
+              <!-- Trustpilot Star Icon -->
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#00b67a">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/>
+              </svg>
+              <span class="trustpilot-label">Trustpilot</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Testimonial Slider Viewport & Nav inside the same section -->
+      <div class="testi-slider-container">
+
+        <!-- Slider Viewport -->
+        <div class="testi-slider-viewport" aria-live="polite">
+
+          <!-- Slide 1 -->
+          <div class="testi-slide active" data-slide="0">
+            <div class="testi-slide-card">
+              <!-- Left: Quote + Text + Author -->
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "I've attended several of their animal welfare community programs, and each one has inspired me to participate even more. The team is dedicated, compassionate, and truly committed to helping vulnerable animals who need care the most. I'm proud to stay involved and contribute whenever I can."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">Mark Henry</h3>
+                  <span class="testi-author-role">CEO, Founder</span>
+                </div>
+              </div>
+              <!-- Right: Portrait Photo -->
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-1.webp" alt="Mark Henry" class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="testi-slide" data-slide="1">
+            <div class="testi-slide-card">
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "The day we fostered Bella, a rescued puppy from stackly, our home was transformed with joy. The medical support and nutritional guidance from the team was exceptional throughout. I'm proud to be part of this life-saving mission every single day."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">Rosalina D.</h3>
+                  <span class="testi-author-role">Rescue Foster Volunteer</span>
+                </div>
+              </div>
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-2.webp" alt="Rosalina D." class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="testi-slide" data-slide="2">
+            <div class="testi-slide-card">
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "Contributing monthly to stackly's animal welfare campaigns has been one of the most meaningful decisions of my life. Seeing the medical care provided to injured and abandoned animals and knowing I'm part of that change is truly fulfilling."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">Christon Smith</h3>
+                  <span class="testi-author-role">Monthly Donor &amp; Advocate</span>
+                </div>
+              </div>
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-3.webp" alt="Christon Smith" class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="testi-slide" data-slide="3">
+            <div class="testi-slide-card">
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "Labonno helped coordinate our community rescue drive that saved over 30 stray animals in a single weekend. stackly's seamless emergency response and dedicated volunteers made it all possible. We couldn't be more grateful."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">Labonno lia</h3>
+                  <span class="testi-author-role">Community Rescue Coordinator</span>
+                </div>
+              </div>
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-4.webp" alt="Labonno lia" class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="testi-slide" data-slide="4">
+            <div class="testi-slide-card">
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "As a veterinarian partnered with Charivo, I have seen first-hand the miraculous transformations of rescued animals. The dedication the team puts into every surgical and trauma rehabilitation case is beyond any organization I have worked with."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">David Smith</h3>
+                  <span class="testi-author-role">Partner Veterinarian</span>
+                </div>
+              </div>
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-5.webp" alt="David Smith" class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="testi-slide" data-slide="5">
+            <div class="testi-slide-card">
+              <div class="testi-slide-text-col">
+                <div class="testi-big-quote-mark">
+                  <svg width="52" height="42" viewBox="0 0 52 42" fill="none">
+                    <path d="M0 42V26.25C0 11.75 8.25 3.75 24.75 0L27 5.25C20.25 7.25 16.25 10.75 15 15.75H24V42H0ZM27 42V26.25C27 11.75 35.25 3.75 51.75 0V5.25C45 7.25 41 10.75 39 15.75H48V42H27Z" fill="#e5eeec"/>
+                  </svg>
+                </div>
+                <blockquote class="testi-slide-quote">
+                  "I started donating after seeing a Charivo street puppy rescue story online and I haven't stopped since. The transparency in how donations are allocated and the genuine warmth every volunteer demonstrates makes this organization truly outstanding."
+                </blockquote>
+                <div class="testi-slide-author">
+                  <h3 class="testi-author-name">Priya Nair</h3>
+                  <span class="testi-author-role">Animal Welfare Donor</span>
+                </div>
+              </div>
+              <div class="testi-slide-photo-col">
+                <div class="testi-photo-frame">
+                  <img src="asset/images/testi-6.webp" alt="Priya Nair" class="testi-portrait" loading="lazy">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- .testi-slider-viewport -->
+
+        <!-- Right-side Vertical Navigation Controls -->
+        <div class="testi-nav-col">
+          <button class="testi-nav-btn testi-nav-prev" id="testiPrev" aria-label="Previous Testimonial">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M18 15l-6-6-6 6"/>
+            </svg>
+          </button>
+          <div class="testi-nav-line top"></div>
+          <div class="testi-nav-counter" id="testiCounter" aria-live="polite">
+            <span class="counter-current">1</span>
+            <span class="counter-sep">/</span>
+            <span class="counter-total">6</span>
+          </div>
+          <div class="testi-nav-line bottom"></div>
+          <button class="testi-nav-btn testi-nav-next" id="testiNext" aria-label="Next Testimonial">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"/>
+            </svg>
+          </button>
+        </div>
+
+      </div><!-- .testi-slider-container -->
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       OUR RECENT PROJECT SECTION (Continuous)
+       ===================================================================== -->
+  <section class="projects-section" id="projects" aria-label="Our Recent Projects">
+    <div class="projects-container">
+
+      <!-- Section Header -->
+      <div class="projects-header-box">
+        <!-- Subtitle with Golden Diamond Lines -->
+        <div class="projects-subtitle-wrap">
+          <span class="gold-diamond-side">
+            <span class="gold-line"></span>
+            <span class="gold-diamond">◆</span>
+          </span>
+          <span class="projects-script-title">Complete Projects</span>
+          <span class="gold-diamond-side">
+            <span class="gold-diamond">◆</span>
+            <span class="gold-line"></span>
+          </span>
+        </div>
+
+        <!-- Main Title -->
+        <h2 class="projects-main-title">Our Recent Project</h2>
+      </div>
+
+      <!-- 4-Column Projects Grid -->
+      <div class="projects-cards-grid">
+
+        <!-- Project Card 1 -->
+        <div class="project-card">
+          <div class="project-card-media">
+            <img src="asset/images/project-1.webp" alt="Emergency Medical Animal Rescue" class="project-img" loading="lazy">
+            <div class="project-card-overlay">
+              <span class="project-category">Emergency Care</span>
+              <h3 class="project-title">Street Animal Medical Relief</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 2 -->
+        <div class="project-card">
+          <div class="project-card-media">
+            <img src="asset/images/project-2.webp" alt="Veterinary Clinic Rehabilitation" class="project-img" loading="lazy">
+            <div class="project-card-overlay">
+              <span class="project-category">Rehabilitation</span>
+              <h3 class="project-title">Sanctuary Vet Hospital</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 3 -->
+        <div class="project-card">
+          <div class="project-card-media">
+            <img src="asset/images/project-3.webp" alt="Foster Ranch & Shelter Home" class="project-img" loading="lazy">
+            <div class="project-card-overlay">
+              <span class="project-category">Shelter Sanctuary</span>
+              <h3 class="project-title">Puppy Care &amp; Nutrition</h3>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Card 4 -->
+        <div class="project-card">
+          <div class="project-card-media">
+            <img src="asset/images/project-4.webp" alt="Rescue Dog Adoption Drive" class="project-img" loading="lazy">
+            <div class="project-card-overlay">
+              <span class="project-category">Forever Homes</span>
+              <h3 class="project-title">Adoption &amp; Rehabilitation</h3>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .projects-cards-grid -->
+
+    </div>
+  </section>
+
+  <!-- =====================================================================
+       FOOTER SECTION (Continuous)
+       ===================================================================== -->
+  <footer class="site-footer" id="contact" aria-label="Site Footer">
+    <!-- Dark Background Image & Overlay -->
+    <div class="footer-bg-wrap">
+      <img src="asset/images/footer-bg.webp" alt="Animal Rescue Sanctuary" class="footer-bg-img" loading="lazy">
+      <div class="footer-overlay"></div>
+    </div>
+
+    <div class="footer-container">
+
+      <!-- =================================================================
+           ATTRACTIVE NEWSLETTER BOX (Top Banner)
+           ================================================================= -->
+      <div class="footer-newsletter-wrap">
+        <div class="newsletter-card">
+          <div class="newsletter-content">
+            <span class="newsletter-script">Stay Connected With Us</span>
+            <h3 class="newsletter-title">Subscribe to Our Animal Rescue Newsletter</h3>
+            <p class="newsletter-desc">Get heartwarming adoption stories, emergency rescue alerts, and updates on our medical rehabilitation missions.</p>
+          </div>
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('🎉 Thank you for subscribing to Charivo Rescue Updates!');">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email address..." required>
+              <button type="submit" class="newsletter-btn">
+                <span>Subscribe Now</span>
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- =================================================================
+           MAIN 4-COLUMN FOOTER WIDGETS
+           ================================================================= -->
+      <div class="footer-main-grid">
+
+        <!-- Column 1: Brand Info, P Tag, Social Media Icons, Contact Badges -->
+        <div class="footer-col footer-col-brand">
+          <!-- Logo -->
+          <a href="#hero" class="footer-logo">
+            <img src="asset/images/stackly_.webp" alt="Stackly Logo" class="footer-logo-img">
+          </a>
+
+          <!-- Description P tag -->
+          <p class="footer-brand-desc">
+            Donations are accepted through our secure online donation platform, which allows you to make a difference.
+          </p>
+
+          <!-- Social Media Icons (Directly below p tag as requested) -->
+          <div class="footer-social-links">
+            <a href="#facebook" class="footer-social-btn" aria-label="Facebook">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.688 5H18V0h-3.808C10.595 0 9 1.582 9 4.615V8z"/></svg>
+            </a>
+            <a href="#twitter" class="footer-social-btn" aria-label="Twitter">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+            </a>
+            <a href="#linkedin" class="footer-social-btn" aria-label="LinkedIn">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            </a>
+            <a href="#youtube" class="footer-social-btn" aria-label="YouTube">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            </a>
+          </div>
+
+          <!-- Contact Mini Badges (Call Us & Email Us) -->
+          <div class="footer-contact-items">
+            <!-- Call Us -->
+            <a href="404.html" class="footer-contact-card">
+              <div class="footer-contact-icon icon-teal">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                  <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+                </svg>
+              </div>
+              <div class="footer-contact-text">
+                <span class="contact-lbl">Call Us:</span>
+                <strong class="contact-val">+ 44 7123 45389</strong>
+              </div>
+            </a>
+
+            <!-- Email Us -->
+            <a href="404.html" class="footer-contact-card">
+              <div class="footer-contact-icon icon-gold">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <div class="footer-contact-text">
+                <span class="contact-lbl">Email Us:</span>
+                <strong class="contact-val">support@stackly.com</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col footer-col-links">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#hero" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Home</a></li>
+            <li><a href="#about" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> About Us</a></li>
+            <li><a href="#causes" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Services</a></li>
+            <li><a href="#causes" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Our Campaign</a></li>
+            <li><a href="#projects" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Blog</a></li>
+            <li><a href="#contact" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Recent Posts -->
+        <div class="footer-col footer-col-posts">
+          <h4 class="footer-col-title">Recent Posts</h4>
+          <div class="footer-posts-list">
+            <!-- Post Item 1 -->
+            <div class="footer-post-item">
+              <a href="404.html" class="post-thumb">
+                <img src="asset/images/post-1.webp" alt="Animal Rescue Update" class="post-thumb-img" loading="lazy">
+              </a>
+              <div class="post-details">
+                <span class="post-date">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  20 April, 2025
+                </span>
+                <a href="404.html" class="post-title">Top 5 Most Famous Technology Trend In 2024</a>
+              </div>
+            </div>
+
+            <!-- Post Item 2 -->
+            <div class="footer-post-item">
+              <a href="404.html" class="post-thumb">
+                <img src="asset/images/post-2.webp" alt="Foster Care Diary" class="post-thumb-img" loading="lazy">
+              </a>
+              <div class="post-details">
+                <span class="post-date">
+                  <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  6th April, 2025
+                </span>
+                <a href="404.html" class="post-title">The Surfing Man Will Blow Your Mind</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 4: Our Projects -->
+        <div class="footer-col footer-col-projects">
+          <h4 class="footer-col-title">Our Projects</h4>
+          <ul class="footer-nav-list">
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Digital Education</a></li>
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Food for Poor</a></li>
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Child Health</a></li>
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Adult Health</a></li>
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Micro Finance</a></li>
+            <li><a href="404.html" class="footer-nav-link"><span class="link-chevron">&rsaquo;</span> Clean Water Supply</a></li>
+          </ul>
+        </div>
+
+      </div><!-- .footer-main-grid -->
+
+      <!-- =================================================================
+           FOOTER BOTTOM BAR / COPYRIGHT
+           ================================================================= -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">
+          &copy; 2026 <strong style="color: var(--accent-gold);">Stackly</strong>. All Rights Reserved. Crafted with love for Animal Welfare.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#privacy">Privacy Policy</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#terms">Terms &amp; Conditions</a>
+          <span class="dot-sep">&bull;</span>
+          <a href="#support">Support</a>
+        </div>
+      </div>
+
+    </div><!-- .footer-container -->
+  </footer>
+
+  <a href="#top" class="back-to-top-btn" aria-label="Back to Top">
+    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </a>
+
+  <!-- =====================================================================
+       SEARCH MODAL OVERLAY
+       ===================================================================== -->
+  <div class="modal-overlay" id="searchModal">
+    <div class="modal-search-box">
+      <button class="modal-close-btn" aria-label="Close search">&times;</button>
+      <input type="text" class="modal-search-input" placeholder="Search animal rescue campaigns, shelters, or pet adoptions...">
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       DONATION MODAL OVERLAY
+       ===================================================================== -->
+  <div class="modal-overlay" id="donationModal">
+    <div class="donation-modal-box">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3>Make an Animal Welfare Gift</h3>
+      <p>Your contribution directly provides food, emergency veterinary surgery, and sanctuary shelter.</p>
+      
+      <div class="modal-tier-grid">
+        <div class="tier-choice" data-tier="15">$15 - Feed a Pet</div>
+        <div class="tier-choice selected" data-tier="50">$50 - Medical Aid</div>
+        <div class="tier-choice" data-tier="100">$100 - Rescue Trauma</div>
+      </div>
+
+      <div style="font-size: 14.5px; margin-bottom: 14px; font-weight: 600;">
+        Selected Amount: <span id="modalSelectedAmount" style="color: var(--primary-green); font-size: 18px; font-weight: 800;">$50</span>
+      </div>
+
+      <input type="text" placeholder="Your Name" style="width: 100%; padding: 12px 16px; margin-bottom: 10px; border-radius: 8px; border: 1.5px solid #d1dedc; font-family: inherit; outline: none;">
+      <input type="email" placeholder="Your Email Address" style="width: 100%; padding: 12px 16px; margin-bottom: 12px; border-radius: 8px; border: 1.5px solid #d1dedc; font-family: inherit; outline: none;">
+
+      <button class="modal-confirm-btn" id="confirmDonationBtn">Complete Donation ♥</button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript in asset/js/ -->
+  <script src="asset/js/main.js"></script>
+  <script src="asset/js/redirect-404.js" defer></script>
+</body>
+</html>

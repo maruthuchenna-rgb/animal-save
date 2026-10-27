@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Stackly Animal Sanctuary & Rescue</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-green: #14594c;
+      --forest-green: #1a6d5d;
+      --dark-teal: #0c2a27;
+      --darker-teal: #071c19;
+      --accent-gold: #f79f1a;
+      --accent-gold-hover: #e58e0f;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-accent: 'Outfit', sans-serif;
+      --font-script: 'Caveat', cursive, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--darker-teal);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-x: hidden;
+    }
+
+    /* Auth Split Layout */
+    .auth-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      position: relative;
+    }
+
+    /* Left Visual Panel with High Quality WebP Image: howwe-1.webp (<100KB) */
+    .auth-visual-panel {
+      position: relative;
+      background-color: var(--dark-teal);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 50px 45px;
+      overflow: hidden;
+    }
+
+    .auth-visual-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.38;
+      filter: saturate(1.1);
+      transform: scale(1.03);
+      transition: transform 8s ease;
+    }
+
+    .auth-visual-panel:hover .auth-visual-bg {
+      transform: scale(1.08);
+    }
+
+    .auth-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7, 28, 25, 0.85) 0%, rgba(20, 89, 76, 0.75) 60%, rgba(7, 28, 25, 0.95) 100%);
+      z-index: 1;
+    }
+
+    .auth-visual-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .auth-brand-logo {
+      height: 48px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.4));
+        filter: brightness(0) saturate(100%) invert(68%) sepia(89%) 
+            saturate(1050%) hue-rotate(343deg) brightness(99%) contrast(96%);
+    }
+
+    .visual-quote-box {
+      position: relative;
+      z-index: 2;
+      margin: 40px 0;
+    }
+
+    .visual-script-tag {
+      font-family: var(--font-script);
+      font-size: 26px;
+      color: var(--accent-gold);
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .visual-quote-title {
+      font-family: var(--font-accent);
+      font-size: clamp(26px, 2.8vw, 36px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .visual-quote-desc {
+      font-size: 15px;
+      color: #cbd5e1;
+      line-height: 1.65;
+      max-width: 440px;
+    }
+
+    /* Floating Stat Pill */
+    .visual-stat-pill {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(12, 42, 39, 0.85);
+      border: 1px solid rgba(247, 159, 26, 0.35);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+    }
+
+    .visual-stat-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      color: var(--dark-teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .visual-stat-num {
+      font-family: var(--font-accent);
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .visual-stat-lbl {
+      font-size: 12.5px;
+      color: #94a3b8;
+    }
+
+    /* Right Form Panel */
+    .auth-form-panel {
+      background: radial-gradient(circle at 10% 15%, rgba(20, 89, 76, 0.35) 0%, transparent 45%),
+                  radial-gradient(circle at 90% 85%, rgba(247, 159, 26, 0.12) 0%, transparent 45%),
+                  var(--darker-teal);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 50px 70px;
+      position: relative;
+    }
+
+    .auth-card-inner {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .auth-header {
+      margin-bottom: 22px;
+    }
+
+    .auth-header-tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--accent-gold);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .auth-title {
+      font-family: var(--font-accent);
+      font-size: 32px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .auth-subtitle {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    /* Role Choice Radio Cards */
+    .role-selection-box {
+      margin-bottom: 20px;
+    }
+
+    .role-label-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .role-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .role-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.05);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-md);
+      padding: 12px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      user-select: none;
+    }
+
+    .role-card:hover {
+      border-color: rgba(247, 159, 26, 0.5);
+      background: rgba(20, 89, 76, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .role-card.active {
+      border-color: var(--accent-gold);
+      background: rgba(20, 89, 76, 0.6);
+      box-shadow: 0 0 20px rgba(247, 159, 26, 0.22);
+    }
+
+    .role-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .role-name {
+      font-family: var(--font-accent);
+      font-size: 14px;
+      font-weight: 800;
+      color: #ffffff;
+      display: block;
+    }
+
+    .role-sub {
+      font-size: 11px;
+      color: #94a3b8;
+      display: block;
+      margin-top: 2px;
+    }
+
+    /* Form Fields */
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+      margin-bottom: 6px;
+    }
+
+    .input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 16px;
+      color: #64748b;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 12px 44px 12px 46px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius-sm);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      border-color: var(--accent-gold);
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 0 0 3px rgba(247, 159, 26, 0.2);
+    }
+
+    .form-input::placeholder {
+      color: #64748b;
+    }
+
+    .toggle-pwd-btn {
+      position: absolute;
+      right: 14px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+    }
+
+    .toggle-pwd-btn:hover {
+      color: #ffffff;
+    }
+
+    /* Terms Checkbox */
+    .terms-row {
+      margin: 18px 0;
+      font-size: 12.5px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    .custom-check-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      cursor: pointer;
+    }
+
+    .custom-check-label input {
+      accent-color: var(--accent-gold);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .terms-link {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    .terms-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Submit Button */
+    .btn-auth-submit {
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--accent-gold) 0%, #ffb338 100%);
+      color: var(--dark-teal);
+      border: none;
+      border-radius: 999px;
+      font-family: var(--font-accent);
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 10px 24px rgba(247, 159, 26, 0.38);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-auth-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(247, 159, 26, 0.55);
+      background: linear-gradient(135deg, #ffae2e 0%, var(--accent-gold) 100%);
+    }
+
+    .btn-auth-submit:active {
+      transform: translateY(0);
+    }
+
+    /* Auth Switch Link */
+    .auth-switch-text {
+      text-align: center;
+      font-size: 14px;
+      color: #94a3b8;
+      margin-top: 22px;
+    }
+
+    .auth-switch-text a {
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .auth-switch-text a:hover {
+      text-decoration: underline;
+    }
+
+    .back-home-bottom {
+      display: block;
+      text-align: center;
+      margin-top: 16px;
+      color: #64748b;
+      font-size: 13px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .back-home-bottom:hover {
+      color: var(--accent-gold);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 991px) {
+      .auth-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .auth-visual-panel {
+        display: none;
+      }
+      .auth-form-panel {
+        padding: 50px 24px;
+      }
+      .auth-title {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-form-panel {
+        padding: 40px 16px;
+      }
+      .role-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="auth-wrapper">
+
+    <!-- Left Visual Panel (High Quality WebP Image: howwe-1.webp, 52KB) -->
+    <div class="auth-visual-panel">
+      <!-- WebP Background Image (<100KB) -->
+      <img src="asset/images/howwe-1.webp" alt="Animal Rescue Volunteer" class="auth-visual-bg">
+      <div class="auth-visual-overlay"></div>
+
+      <!-- Top Branding -->
+      <div class="auth-visual-content">
+        <a href="index.html">
+          <img src="asset/images/stackly_.webp" alt="Stackly Animal Welfare" class="auth-brand-logo">
+        </a>
+      </div>
+
+      <!-- Middle Emotional Quote -->
+      <div class="visual-quote-box">
+        <span class="visual-script-tag">🐾 Join 12,000+ Animal Protectors</span>
+        <h2 class="visual-quote-title">Be The Hope An Abandoned Pet Has Been Waiting For</h2>
+        <p class="visual-quote-desc">
+          Whether you manage daily shelter operations or sponsor rescued pups through monthly gifts, your account connects you directly to live updates, medical records, and transparent impact tracking.
+        </p>
+      </div>
+
+      <!-- Bottom Verified Stat Pill -->
+      <div class="visual-stat-pill">
+        <div class="visual-stat-icon">🌟</div>
+        <div>
+          <div class="visual-stat-num">98% Successful Adoption Rate</div>
+          <div class="visual-stat-lbl">100% Secure &amp; Verified Sanctuary Platform</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Form Panel -->
+    <div class="auth-form-panel">
+      <div class="auth-card-inner">
+        
+        <!-- Header -->
+        <div class="auth-header">
+          <span class="auth-header-tag">Create New Account</span>
+          <h1 class="auth-title">Join Stackly Sanctuary</h1>
+          <p class="auth-subtitle">Select your role and register to begin saving lives</p>
+        </div>
+
+        <!-- 2 Roles Selector (Admin vs Donor) -->
+        <div class="role-selection-box">
+          <div class="role-label-title">
+            <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Choose Account Type:
+          </div>
+          <div class="role-grid">
+            
+            <!-- Option 1: Admin -->
+            <div class="role-card" id="roleBtnAdmin" onclick="setRole('admin')">
+              <span class="role-icon">👑</span>
+              <span class="role-name">Shelter Admin</span>
+              <span class="role-sub">Director &amp; Operations</span>
+            </div>
+
+            <!-- Option 2: Donor -->
+            <div class="role-card active" id="roleBtnDonor" onclick="setRole('donor')">
+              <span class="role-icon">💛</span>
+              <span class="role-name">Donor / Sponsor</span>
+              <span class="role-sub">Impact &amp; Giving</span>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Signup Form -->
+        <form id="authSignupForm" novalidate>
+          
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label class="form-label" for="signupName">Full Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <input type="text" id="signupName" class="form-input" placeholder="e.g. Emily Watson" required>
+            </div>
+          </div>
+
+          <!-- Email Field -->
+          <div class="form-group">
+            <label class="form-label" for="signupEmail">Email Address</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <input type="email" id="signupEmail" class="form-input" placeholder="e.g. emily@domain.org" required>
+            </div>
+          </div>
+
+          <!-- Password Field -->
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="signupPassword" class="form-input" placeholder="At least 6 characters" required>
+              <button type="button" class="toggle-pwd-btn" onclick="togglePasswordVisibility('signupPassword', this)" aria-label="Toggle password visibility">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Confirm Password Field -->
+          <div class="form-group">
+            <label class="form-label" for="signupConfirmPassword">Confirm Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              </span>
+              <input type="password" id="signupConfirmPassword" class="form-input" placeholder="Re-enter password" required>
+              <button type="button" class="toggle-pwd-btn" onclick="togglePasswordVisibility('signupConfirmPassword', this)" aria-label="Toggle password visibility">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="terms-row">
+            <label class="custom-check-label">
+              <input type="checkbox" id="acceptTerms" required checked>
+              <span>I agree to Stackly Sanctuary's <a href="javascript:void(0)" class="terms-link">Terms of Service</a> &amp; <a href="javascript:void(0)" class="terms-link">Animal Welfare Code of Ethics</a></span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-auth-submit">
+            <span>Create My Account</span>
+            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+
+        <!-- Switch to Login -->
+        <div class="auth-switch-text">
+          Already have an account?
+          <a href="login.html">Sign In Here →</a>
+        </div>
+
+        <!-- Return Home -->
+        <a href="index.html" class="back-home-bottom">← Back to Public Website</a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let selectedRole = 'donor'; // Default to donor on signup
+
+    const roleTargets = {
+      'admin': 'dashboard-admin.html',
+      'donor': 'dashboard-donor.html'
+    };
+
+    function setRole(role) {
+      selectedRole = role;
+      document.getElementById('roleBtnAdmin').classList.toggle('active', role === 'admin');
+      document.getElementById('roleBtnDonor').classList.toggle('active', role === 'donor');
+    }
+
+    function togglePasswordVisibility(fieldId, btn) {
+      const field = document.getElementById(fieldId);
+      if (field.type === 'password') {
+        field.type = 'text';
+        btn.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>`;
+      } else {
+        field.type = 'password';
+        btn.innerHTML = `<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>`;
+      }
+    }
+
+    document.getElementById('authSignupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('signupName').value.trim();
+      const email = document.getElementById('signupEmail').value.trim();
+      const pwd = document.getElementById('signupPassword').value;
+      const confirmPwd = document.getElementById('signupConfirmPassword').value;
+      const terms = document.getElementById('acceptTerms').checked;
+
+      if (!name) {
+        alert('Please enter your full name.');
+        return;
+      }
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+      if (!pwd || pwd.length < 6) {
+        alert('Password must be at least 6 characters.');
+        return;
+      }
+      if (pwd !== confirmPwd) {
+        alert('Passwords do not match. Please re-check.');
+        return;
+      }
+      if (!terms) {
+        alert('You must accept the terms & conditions.');
+        return;
+      }
+
+      // Store new user info
+      localStorage.setItem('stackly_user_name', name);
+      localStorage.setItem('stackly_user_email', email);
+      localStorage.setItem('stackly_user_role', selectedRole);
+
+      alert(`🎉 Welcome to Stackly Sanctuary, ${name}! Your ${selectedRole === 'admin' ? 'Admin' : 'Donor'} account has been created successfully.`);
+      const destination = roleTargets[selectedRole] || 'dashboard-donor.html';
+      window.location.href = destination;
+    });
+  </script>
+
+  <script src="asset/js/redirect-404.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Stackly Animal Sanctuary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/dashboard.css">
+</head>
+<body class="dashboard-body" data-role="admin">
+
+<div class="dashboard-layout">
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       SIDEBAR — Exactly 5 dash bar options
+       ====================================================== -->
+  <aside class="dashboard-sidebar">
+
+    <!-- Brand -->
+    <div class="sidebar-brand-box">
+      <a href="index.html" class="sidebar-brand-link">
+        <img src="asset/images/stackly_.webp" alt="Stackly" class="sidebar-brand-img">
+      </a>
+      <button class="sidebar-close-btn" aria-label="Close">&times;</button>
+    </div>
+
+    <!-- User profile (name + email injected by JS) -->
+    <div class="sidebar-user-card">
+      <div class="user-avatar-wrap">
+        <img src="asset/images/team-2.webp" alt="Admin Avatar" class="user-avatar-img">
+        <span class="user-online-dot"></span>
+      </div>
+      <div class="user-meta-info">
+        <div class="user-display-name">Sarah Jenkins</div>
+        <span class="user-display-email">admin@stacklyrescue.org</span>
+        <span class="user-role-pill">👑 Shelter Director</span>
+      </div>
+    </div>
+
+    <!-- 5 navigation options -->
+    <div class="sidebar-nav-section">
+      <div class="sidebar-nav-title">Admin Navigation</div>
+      <ul class="sidebar-menu-list">
+
+        <li>
+          <button class="dash-nav-btn active" data-tab="tab-overview" onclick="window.switchDashTab('tab-overview', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M3 3h7v9H3V3zm11 0h7v5h-7V3zm0 9h7v9h-7v-9zM3 16h7v5H3v-5z"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">1. Shelter Overview</span>
+            </span>
+            <span class="nav-count-badge">Live</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-animals" onclick="window.switchDashTab('tab-animals', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">2. Animal Registry</span>
+            </span>
+            <span class="nav-count-badge">248</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-donations" onclick="window.switchDashTab('tab-donations', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 2v20m5-17H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">3. Funds &amp; Donations</span>
+            </span>
+            <span class="nav-count-badge">$84K</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-staff" onclick="window.switchDashTab('tab-staff', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">4. Staff &amp; Volunteers</span>
+            </span>
+            <span class="nav-count-badge">62</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-reports" onclick="window.switchDashTab('tab-reports', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">5. Reports &amp; Audit</span>
+            </span>
+            <span class="nav-count-badge">New</span>
+          </button>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="sidebar-footer">
+    
+      <button class="sidebar-logout-btn">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sign Out
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ======================================================
+       MAIN AREA
+       ====================================================== -->
+  <main class="dashboard-main-area">
+
+    <!-- Topbar -->
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button class="mobile-sidebar-toggle" aria-label="Open menu">&#9776;</button>
+        <h1 class="topbar-page-title">Shelter Overview</h1>
+        <span class="topbar-role-badge">Admin Console</span>
+      </div>
+      <div class="topbar-right">
+        <!-- Role switcher (only 2 options) -->
+        <div class="role-switch-dropdown">
+         
+          <div class="role-dropdown-menu">
+           
+          </div>
+        </div>
+        <!-- User chip -->
+        <div class="topbar-user-chip">
+          <img src="asset/images/team-2.webp" alt="Admin" class="topbar-avatar">
+          <div class="topbar-user-text">
+            <div class="topbar-user-name user-display-name">Sarah Jenkins</div>
+            <div class="topbar-user-email user-display-email">admin@stacklyrescue.org</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content viewport -->
+    <div class="dashboard-content-viewport">
+
+      <!-- ================================================
+           TAB 1 — SHELTER OVERVIEW
+           ================================================ -->
+      <section id="tab-overview" class="dash-tab-pane active">
+
+        <!-- Welcome Banner -->
+        <div class="dash-welcome-banner">
+          <div class="welcome-deco-paw" aria-hidden="true">🐾</div>
+          <div>
+            <h2 class="welcome-title">Welcome back, <span class="welcome-user-name">Sarah</span>!</h2>
+            <p class="welcome-desc">
+              Real-time operational briefing for Stackly Animal Sanctuary. 248 rescued animals are in active medical and shelter care today.
+            </p>
+            <div class="welcome-email-pill">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Logged in as: <strong class="welcome-email-text">admin@stacklyrescue.org</strong>
+            </div>
+          </div>
+          <a href="404.html" class="btn-dash-primary" style="background:var(--dash-gold);color:#071c19;white-space:nowrap;">View Public Site ↗</a>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-cards-grid">
+          <div class="kpi-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">Animals in Shelter</span>
+              <div class="kpi-card-icon-wrap icon-emerald">🐾</div>
+            </div>
+            <div class="kpi-card-value">248</div>
+            <div class="kpi-card-footer"><span class="trend-up">↑ +14</span>&nbsp;new rescues this week</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">Adoptions Finalized</span>
+              <div class="kpi-card-icon-wrap icon-amber">🏡</div>
+            </div>
+            <div class="kpi-card-value">1,420</div>
+            <div class="kpi-card-footer"><span class="trend-up">↑ 98%</span>&nbsp;adoption success rate</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">Emergency Fund</span>
+              <div class="kpi-card-icon-wrap icon-blue">💰</div>
+            </div>
+            <div class="kpi-card-value">$84,250</div>
+            <div class="kpi-card-footer"><span class="trend-up">84%</span>&nbsp;of $100 K target reached</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header">
+              <span class="kpi-card-label">Volunteers On Duty</span>
+              <div class="kpi-card-icon-wrap icon-rose">🩺</div>
+            </div>
+            <div class="kpi-card-value">62</div>
+            <div class="kpi-card-footer"><span class="trend-neutral">● 4 field rescue teams active</span></div>
+          </div>
+        </div>
+
+        <!-- Recent Admissions Table -->
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <h3 class="dash-card-title">
+              🚨 Recent Rescue Admissions
+              <span class="status-pill status-amber">Live Inflow</span>
+            </h3>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">+ Admit New Animal</button>
+            </div>
+          </div>
+          <div class="table-responsive-box">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Animal</th>
+                  <th>Species / Breed</th>
+                  <th>Intake Date</th>
+                  <th>Health Status</th>
+                  <th>Assigned Vet</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="pet-thumb-cell">
+                      <img src="asset/images/event-1.webp" alt="Barnaby" class="pet-thumb-img">
+                      <div>
+                        <span class="pet-name-bold">Barnaby</span>
+                        <span class="pet-sub-id">STK-2026-089</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Canine / Golden Mix</td>
+                  <td>Today, 08:30 AM</td>
+                  <td><span class="status-pill status-rose">Critical Trauma</span></td>
+                  <td>Dr. Marcus Vance</td>
+                  <td><button class="btn-dash-secondary">Review</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pet-thumb-cell">
+                      <img src="asset/images/event-3.webp" alt="Luna & Milo" class="pet-thumb-img">
+                      <div>
+                        <span class="pet-name-bold">Luna &amp; Milo</span>
+                        <span class="pet-sub-id">STK-2026-092</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Canine / Puppy Duo</td>
+                  <td>Yesterday, 4:15 PM</td>
+                  <td><span class="status-pill status-green">Healthy / Quarantine</span></td>
+                  <td>Dr. Lisa Zhang</td>
+                  <td><button class="btn-dash-secondary">Review</button></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="pet-thumb-cell">
+                      <img src="asset/images/event-4.webp" alt="Cleo" class="pet-thumb-img">
+                      <div>
+                        <span class="pet-name-bold">Cleo</span>
+                        <span class="pet-sub-id">STK-2026-077</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Feline / Tabby</td>
+                  <td>Oct 21, 2026</td>
+                  <td><span class="status-pill status-blue">Adoption Ready</span></td>
+                  <td>Dr. Marcus Vance</td>
+                  <td><button class="btn-dash-secondary">Review</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ================================================
+           TAB 2 — ANIMAL REGISTRY
+           ================================================ -->
+      <section id="tab-animals" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <div>
+              <h3 class="dash-card-title">🐾 Sanctuary Animal Registry</h3>
+              <p style="font-size:13.5px;color:var(--dash-text-muted);margin-top:4px;">Full directory of all 248 animals currently sheltered.</p>
+            </div>
+            <div class="dash-card-actions">
+              <input type="text" placeholder="Search name, tag or breed…" style="padding:8px 14px;border-radius:999px;border:1.5px solid var(--dash-border);font-size:13px;outline:none;">
+              <button class="btn-dash-primary">+ New Intake</button>
+            </div>
+          </div>
+          <div class="dash-item-grid-3">
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/event-1.webp" alt="Barnaby" class="item-card-img">
+                <span class="item-card-badge">Intake #089</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Barnaby</h4>
+                <div class="item-card-meta">Golden Mix • Male • 6 Months</div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Rescued from highway drainage. Currently in post-op recovery ward after femur repair surgery.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-rose">Under Treatment</span>
+                  <button class="btn-dash-secondary" style="padding:4px 10px;font-size:12px;">Full Profile</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/event-3.webp" alt="Luna & Milo" class="item-card-img">
+                <span class="item-card-badge">Intake #092</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Luna &amp; Milo</h4>
+                <div class="item-card-meta">Mixed Pups • Bonded Pair • 10 Weeks</div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Bonded siblings — vaccinated and cleared for family meet-and-greet sessions this week.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-green">Adoption Ready</span>
+                  <button class="btn-dash-secondary" style="padding:4px 10px;font-size:12px;">Full Profile</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/howwe-1.webp" alt="Rusty" class="item-card-img">
+                <span class="item-card-badge">Intake #071</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Rusty</h4>
+                <div class="item-card-meta">Terrier Mix • Male • 2 Years</div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Socialization complete. Great with children. Adoption application in final home-visit review stage.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-amber">Pending Adoption</span>
+                  <button class="btn-dash-secondary" style="padding:4px 10px;font-size:12px;">Full Profile</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 3 — FUNDS & DONATIONS
+           ================================================ -->
+      <section id="tab-donations" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <div>
+              <h3 class="dash-card-title">💰 Donations &amp; Funding Campaigns</h3>
+              <p style="font-size:13.5px;color:var(--dash-text-muted);margin-top:4px;">Incoming donor gifts, recurring memberships, and campaign progress tracking.</p>
+            </div>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">+ Create Campaign</button>
+            </div>
+          </div>
+
+          <!-- Campaign Progress Cards -->
+          <div class="kpi-cards-grid" style="margin-bottom:24px;">
+            <div class="kpi-card">
+              <div class="kpi-card-header"><span class="kpi-card-label">Emergency Medical Fund</span><div class="kpi-card-icon-wrap icon-rose">🏥</div></div>
+              <div class="kpi-card-value">$84,250</div>
+              <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:84%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+              <div class="kpi-card-footer"><span class="trend-up">84%</span>&nbsp;of $100K goal</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-header"><span class="kpi-card-label">Winter Food Drive</span><div class="kpi-card-icon-wrap icon-amber">🍖</div></div>
+              <div class="kpi-card-value">$15,320</div>
+              <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:61%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+              <div class="kpi-card-footer"><span class="trend-up">61%</span>&nbsp;of $25K goal</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-header"><span class="kpi-card-label">New Sanctuary Wing</span><div class="kpi-card-icon-wrap icon-blue">🏗</div></div>
+              <div class="kpi-card-value">$76,000</div>
+              <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:38%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+              <div class="kpi-card-footer"><span class="trend-neutral">38%</span>&nbsp;of $200K goal</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-card-header"><span class="kpi-card-label">Total Raised (2026)</span><div class="kpi-card-icon-wrap icon-emerald">💳</div></div>
+              <div class="kpi-card-value">$175,570</div>
+              <div class="kpi-card-footer"><span class="trend-up">↑ +$12,400</span>&nbsp;this month</div>
+            </div>
+          </div>
+
+          <div class="table-responsive-box">
+            <table class="dash-table">
+              <thead>
+                <tr><th>Donor Name</th><th>Email</th><th>Amount</th><th>Fund</th><th>Method</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Emily Watson</strong></td>
+                  <td>donor@stacklyrescue.org</td>
+                  <td><strong style="color:var(--dash-primary);">$49.00 / mo</strong></td>
+                  <td>Protector Sponsorship</td>
+                  <td>Visa •••• 4242</td>
+                  <td><span class="status-pill status-green">Recurring Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>David Vance</strong></td>
+                  <td>david.v@gmail.com</td>
+                  <td><strong style="color:var(--dash-primary);">$500.00</strong></td>
+                  <td>Emergency Surgery Wing</td>
+                  <td>Mastercard •••• 9811</td>
+                  <td><span class="status-pill status-green">Completed</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Anonymous Supporter</strong></td>
+                  <td>hidden@domain.org</td>
+                  <td><strong style="color:var(--dash-primary);">$1,000.00</strong></td>
+                  <td>Winter Food Drive</td>
+                  <td>Wire Transfer</td>
+                  <td><span class="status-pill status-green">Completed</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 4 — STAFF & VOLUNTEERS
+           ================================================ -->
+      <section id="tab-staff" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <div>
+              <h3 class="dash-card-title">👥 Staff &amp; Volunteer Roster</h3>
+              <p style="font-size:13.5px;color:var(--dash-text-muted);margin-top:4px;">Active medical officers, field volunteers, and caregivers — 62 on duty today.</p>
+            </div>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">+ Add Caregiver</button>
+            </div>
+          </div>
+          <div class="dash-item-grid-3">
+
+            <div class="dash-item-card">
+              <div class="item-card-media" style="height:150px;">
+                <img src="asset/images/team-1.webp" alt="Christon Smith" class="item-card-img">
+                <span class="item-card-badge" style="background:#10b981;">● On Shift</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Christon Smith</h4>
+                <div class="item-card-meta">Senior Animal Behaviourist • Full Time</div>
+                <p style="font-size:12.5px;color:var(--dash-text-muted);">christon@stacklyrescue.org<br>Shifts Logged: 184 hrs</p>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media" style="height:150px;">
+                <img src="asset/images/team-3.webp" alt="David Smith" class="item-card-img">
+                <span class="item-card-badge" style="background:#10b981;">● On Shift</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">David Smith</h4>
+                <div class="item-card-meta">Field Rescue Dispatch Lead • Full Time</div>
+                <p style="font-size:12.5px;color:var(--dash-text-muted);">david.s@stacklyrescue.org<br>Missions Led: 48 rescues</p>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media" style="height:150px;">
+                <img src="asset/images/team-4.webp" alt="Labonno Lia" class="item-card-img">
+                <span class="item-card-badge" style="background:#3b82f6;">Quarantine Lead</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Labonno Lia</h4>
+                <div class="item-card-meta">Veterinary Technician • Full Time</div>
+                <p style="font-size:12.5px;color:var(--dash-text-muted);">labonno@stacklyrescue.org<br>Vaccinations: 320 administered</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 5 — REPORTS & AUDIT
+           ================================================ -->
+      <section id="tab-reports" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <div>
+              <h3 class="dash-card-title">📊 Reports &amp; Audit Compliance</h3>
+              <p style="font-size:13.5px;color:var(--dash-text-muted);margin-top:4px;">Downloadable monthly intake reports, expenditure statements, and 501(c)(3) certifications.</p>
+            </div>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">📥 Export All as PDF</button>
+            </div>
+          </div>
+          <div class="table-responsive-box">
+            <table class="dash-table">
+              <thead>
+                <tr><th>Report Title</th><th>Period</th><th>Format</th><th>Verified By</th><th>Download</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Q3 Animal Welfare Intake &amp; Release Audit</strong></td>
+                  <td>July – September 2026</td>
+                  <td>PDF — 2.4 MB</td>
+                  <td>Sarah Jenkins</td>
+                  <td><button class="btn-dash-secondary">Download</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Veterinary Surgery &amp; Medicine Expenditure</strong></td>
+                  <td>October 2026 (MTD)</td>
+                  <td>XLSX — 410 KB</td>
+                  <td>Dr. Marcus Vance</td>
+                  <td><button class="btn-dash-secondary">Download</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Donor Contribution Transparency Ledger</strong></td>
+                  <td>Annual 2026</td>
+                  <td>PDF — 1.8 MB</td>
+                  <td>Board of Trustees</td>
+                  <td><button class="btn-dash-secondary">Download</button></td>
+                </tr>
+                <tr>
+                  <td><strong>Volunteer Hours &amp; Impact Summary</strong></td>
+                  <td>October 2026 (MTD)</td>
+                  <td>PDF — 890 KB</td>
+                  <td>Sarah Jenkins</td>
+                  <td><button class="btn-dash-secondary">Download</button></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.dashboard-content-viewport -->
+  </main>
+
+</div><!-- /.dashboard-layout -->
+
+<script src="asset/js/dashboard.js"></script>
+  <script src="asset/js/redirect-404.js" defer></script>
+</body>
+</html>

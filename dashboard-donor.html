@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Dashboard | Stackly Animal Sanctuary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="asset/css/dashboard.css">
+  <style>
+    /* Impact allocation bars */
+    .alloc-row { display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+    .alloc-label { width:175px; flex-shrink:0; font-size:13.5px; font-weight:600; color:var(--dash-text); }
+    .alloc-track { flex:1; height:10px; background:#e2e8f0; border-radius:999px; overflow:hidden; }
+    .alloc-fill  { height:100%; border-radius:999px; background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold)); }
+    .alloc-pct   { width:42px; text-align:right; font-size:13px; font-weight:700; color:var(--dash-primary); flex-shrink:0; }
+
+    /* Sponsored pet rows */
+    .spon-card { display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid var(--dash-border); border-radius:var(--radius-md); padding:20px; box-shadow:var(--shadow-subtle); transition:var(--transition); }
+    .spon-card:hover { transform:translateY(-2px); box-shadow:var(--shadow-card); }
+    .spon-img  { width:80px; height:80px; border-radius:12px; object-fit:cover; flex-shrink:0; }
+    .spon-list { display:flex; flex-direction:column; gap:14px; }
+
+    /* Tier plan cards */
+    .tier-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .tier-card { background:#f8fafc; border:1.5px solid var(--dash-border); border-radius:16px; padding:22px 18px; text-align:center; transition:var(--transition); }
+    .tier-card:hover { border-color:var(--dash-primary); }
+    .tier-card.current { background:var(--dash-primary-dark); border-color:var(--dash-gold); color:#fff; }
+    .tier-icon  { font-size:30px; margin-bottom:8px; }
+    .tier-name  { font-family:'Outfit',sans-serif; font-weight:800; font-size:16px; margin-bottom:6px; }
+    .tier-price { font-family:'Outfit',sans-serif; font-size:26px; font-weight:900; color:var(--dash-primary); line-height:1.1; }
+    .tier-card.current .tier-price { color:var(--dash-gold); }
+    .tier-desc  { font-size:12px; color:var(--dash-text-muted); margin-top:6px; line-height:1.5; }
+    .tier-card.current .tier-desc { color:#94a3b8; }
+    .tier-current-tag { display:inline-block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.6px; background:var(--dash-gold); color:#071c19; border-radius:999px; padding:3px 10px; margin-bottom:8px; }
+
+    @media (max-width:768px) { .tier-grid { grid-template-columns:1fr; } .spon-card { flex-direction:column; } }
+  </style>
+</head>
+<body class="dashboard-body" data-role="donor">
+
+<div class="dashboard-layout">
+  <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+  <!-- ======================================================
+       SIDEBAR — Exactly 5 dash bar options
+       ====================================================== -->
+  <aside class="dashboard-sidebar">
+
+    <div class="sidebar-brand-box">
+      <a href="index.html" class="sidebar-brand-link">
+        <img src="asset/images/stackly_.webp" alt="Stackly" class="sidebar-brand-img">
+      </a>
+      <button class="sidebar-close-btn" aria-label="Close">&times;</button>
+    </div>
+
+    <!-- User profile (name + email injected by JS) -->
+    <div class="sidebar-user-card">
+      <div class="user-avatar-wrap">
+        <img src="asset/images/avatar-2.webp" alt="Donor Avatar" class="user-avatar-img">
+        <span class="user-online-dot"></span>
+      </div>
+      <div class="user-meta-info">
+        <div class="user-display-name">Emily Watson</div>
+        <span class="user-display-email">donor@stacklyrescue.org</span>
+        <span class="user-role-pill">💛 Guardian Sponsor</span>
+      </div>
+    </div>
+
+    <!-- 5 navigation options -->
+    <div class="sidebar-nav-section">
+      <div class="sidebar-nav-title">Donor Navigation</div>
+      <ul class="sidebar-menu-list">
+
+        <li>
+          <button class="dash-nav-btn active" data-tab="tab-impact" onclick="window.switchDashTab('tab-impact', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M3 3h7v9H3V3zm11 0h7v5h-7V3zm0 9h7v9h-7v-9zM3 16h7v5H3v-5z"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">1. My Impact Overview</span>
+            </span>
+            <span class="nav-count-badge">Live</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-sponsored" onclick="window.switchDashTab('tab-sponsored', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">2. My Sponsored Animals</span>
+            </span>
+            <span class="nav-count-badge">3</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-history" onclick="window.switchDashTab('tab-history', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 2v20m5-17H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">3. Donation History</span>
+            </span>
+            <span class="nav-count-badge">18</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-campaigns" onclick="window.switchDashTab('tab-campaigns', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">4. Active Campaigns</span>
+            </span>
+            <span class="nav-count-badge">3</span>
+          </button>
+        </li>
+
+        <li>
+          <button class="dash-nav-btn" data-tab="tab-tier" onclick="window.switchDashTab('tab-tier', this)">
+            <span class="dash-nav-btn-inner">
+              <span class="dash-nav-icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </span>
+              <span class="dash-nav-label">5. My Sponsor Tier</span>
+            </span>
+            <span class="nav-count-badge">Gold</span>
+          </button>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="sidebar-footer">
+     
+      <button class="sidebar-logout-btn">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+        Sign Out
+      </button>
+    </div>
+
+  </aside>
+
+  <!-- ======================================================
+       MAIN AREA
+       ====================================================== -->
+  <main class="dashboard-main-area">
+
+    <header class="dashboard-topbar">
+      <div class="topbar-left">
+        <button class="mobile-sidebar-toggle" aria-label="Open menu">&#9776;</button>
+        <h1 class="topbar-page-title">My Impact Overview</h1>
+        <span class="topbar-role-badge">Donor Portal</span>
+      </div>
+      <div class="topbar-right">
+        <div class="role-switch-dropdown">
+         
+          <div class="role-dropdown-menu">
+         
+          </div>
+        </div>
+        <div class="topbar-user-chip">
+          <img src="asset/images/avatar-2.webp" alt="Donor" class="topbar-avatar">
+          <div class="topbar-user-text">
+            <div class="topbar-user-name user-display-name">Emily Watson</div>
+            <div class="topbar-user-email user-display-email">donor@stacklyrescue.org</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dashboard-content-viewport">
+
+      <!-- ================================================
+           TAB 1 — IMPACT OVERVIEW
+           ================================================ -->
+      <section id="tab-impact" class="dash-tab-pane active">
+
+        <div class="dash-welcome-banner">
+          <div class="welcome-deco-paw" aria-hidden="true">💛</div>
+          <div>
+            <h2 class="welcome-title">Thank you, <span class="welcome-user-name">Emily</span>!</h2>
+            <p class="welcome-desc">
+              Your donations have directly funded veterinary care, daily food, and safe shelter for 48 rescued animals this year. You are a true animal guardian — every contribution saves a life.
+            </p>
+            <div class="welcome-email-pill">
+              <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Logged in as: <strong class="welcome-email-text">donor@stacklyrescue.org</strong>
+            </div>
+          </div>
+          <button class="btn-dash-primary" style="background:var(--dash-gold);color:#071c19;white-space:nowrap;">💛 Donate Again</button>
+        </div>
+
+        <!-- KPI Cards -->
+        <div class="kpi-cards-grid">
+          <div class="kpi-card">
+            <div class="kpi-card-header"><span class="kpi-card-label">Total Donated (Lifetime)</span><div class="kpi-card-icon-wrap icon-amber">💰</div></div>
+            <div class="kpi-card-value">$1,870</div>
+            <div class="kpi-card-footer"><span class="trend-up">↑ $49</span>&nbsp;billed this month</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header"><span class="kpi-card-label">Animals I Sponsor</span><div class="kpi-card-icon-wrap icon-emerald">🐾</div></div>
+            <div class="kpi-card-value">3</div>
+            <div class="kpi-card-footer"><span class="trend-neutral">● Barnaby, Cleo, Rusty</span></div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header"><span class="kpi-card-label">Meals Funded This Year</span><div class="kpi-card-icon-wrap icon-blue">🍖</div></div>
+            <div class="kpi-card-value">2,240</div>
+            <div class="kpi-card-footer"><span class="trend-up">↑ 640</span>&nbsp;since last month</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-card-header"><span class="kpi-card-label">Vet Procedures Funded</span><div class="kpi-card-icon-wrap icon-rose">🩺</div></div>
+            <div class="kpi-card-value">7</div>
+            <div class="kpi-card-footer"><span class="trend-up">↑ 2</span>&nbsp;surgeries covered this year</div>
+          </div>
+        </div>
+
+        <!-- Allocation Breakdown -->
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <h3 class="dash-card-title">📊 How Your Donations Are Used</h3>
+          </div>
+          <div class="alloc-row"><span class="alloc-label">🍖 Food &amp; Nutrition</span><div class="alloc-track"><div class="alloc-fill" style="width:42%"></div></div><span class="alloc-pct">42%</span></div>
+          <div class="alloc-row"><span class="alloc-label">🩺 Veterinary &amp; Surgery</span><div class="alloc-track"><div class="alloc-fill" style="width:31%"></div></div><span class="alloc-pct">31%</span></div>
+          <div class="alloc-row"><span class="alloc-label">🏠 Shelter Maintenance</span><div class="alloc-track"><div class="alloc-fill" style="width:18%"></div></div><span class="alloc-pct">18%</span></div>
+          <div class="alloc-row"><span class="alloc-label">🚗 Field Rescue Transport</span><div class="alloc-track"><div class="alloc-fill" style="width:9%"></div></div><span class="alloc-pct">9%</span></div>
+        </div>
+
+      </section>
+
+      <!-- ================================================
+           TAB 2 — SPONSORED ANIMALS
+           ================================================ -->
+      <section id="tab-sponsored" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <h3 class="dash-card-title">💛 My 3 Sponsored Animals</h3>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">+ Sponsor Another Animal</button>
+            </div>
+          </div>
+          <div class="spon-list">
+
+            <div class="spon-card">
+              <img src="asset/images/event-1.webp" alt="Barnaby" class="spon-img">
+              <div>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                  <strong style="font-size:16px;">Barnaby — STK-089</strong>
+                  <span class="status-pill status-amber">Under Treatment</span>
+                </div>
+                <p style="font-size:13.5px;color:var(--dash-text-muted);margin-bottom:8px;">Golden Mix • 6 months • Post-surgery recovery. Your sponsorship ($15/mo) is covering daily pain management and nursing care.</p>
+                <span style="font-size:12.5px;color:var(--dash-primary);font-weight:600;">💛 Supporting since: Sept 1, 2026</span>
+              </div>
+            </div>
+
+            <div class="spon-card">
+              <img src="asset/images/event-4.webp" alt="Cleo" class="spon-img">
+              <div>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                  <strong style="font-size:16px;">Cleo — STK-077</strong>
+                  <span class="status-pill status-blue">Adoption Ready</span>
+                </div>
+                <p style="font-size:13.5px;color:var(--dash-text-muted);margin-bottom:8px;">Tabby Feline • 2 years • Fully vaccinated after spay op. Your sponsorship helped cover her $380 surgery. She is ready for her forever home!</p>
+                <span style="font-size:12.5px;color:var(--dash-primary);font-weight:600;">💛 Supporting since: Aug 10, 2026</span>
+              </div>
+            </div>
+
+            <div class="spon-card">
+              <img src="asset/images/howwe-1.webp" alt="Rusty" class="spon-img">
+              <div>
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px;">
+                  <strong style="font-size:16px;">Rusty — STK-071</strong>
+                  <span class="status-pill status-green">Thriving</span>
+                </div>
+                <p style="font-size:13.5px;color:var(--dash-text-muted);margin-bottom:8px;">Terrier Mix • 2 years • Your ongoing $19/mo keeps Rusty healthy and socialised. 3 adoption enquiries received this week!</p>
+                <span style="font-size:12.5px;color:var(--dash-primary);font-weight:600;">💛 Supporting since: July 22, 2026</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 3 — DONATION HISTORY
+           ================================================ -->
+      <section id="tab-history" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <h3 class="dash-card-title">📜 Donation History — 18 Transactions</h3>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary">📥 Download Tax Receipt</button>
+            </div>
+          </div>
+          <div class="table-responsive-box">
+            <table class="dash-table">
+              <thead>
+                <tr><th>Date</th><th>Amount</th><th>Designated For</th><th>Payment Method</th><th>Receipt</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Oct 1, 2026</td><td><strong style="color:var(--dash-primary);">$49.00</strong></td><td>Protector Monthly Sponsorship</td><td>Visa •••• 4242</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+                <tr><td>Sep 1, 2026</td><td><strong style="color:var(--dash-primary);">$49.00</strong></td><td>Protector Monthly Sponsorship</td><td>Visa •••• 4242</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+                <tr><td>Aug 15, 2026</td><td><strong style="color:var(--dash-primary);">$200.00</strong></td><td>Emergency Surgery — Cleo Spay</td><td>PayPal</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+                <tr><td>Aug 1, 2026</td><td><strong style="color:var(--dash-primary);">$49.00</strong></td><td>Protector Monthly Sponsorship</td><td>Visa •••• 4242</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+                <tr><td>Jul 22, 2026</td><td><strong style="color:var(--dash-primary);">$100.00</strong></td><td>Winter Food Drive — One-Time Gift</td><td>Bank Transfer</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+                <tr><td>Jul 1, 2026</td><td><strong style="color:var(--dash-primary);">$49.00</strong></td><td>Protector Monthly Sponsorship</td><td>Visa •••• 4242</td><td><button class="btn-dash-secondary">Download</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 4 — ACTIVE CAMPAIGNS
+           ================================================ -->
+      <section id="tab-campaigns" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <h3 class="dash-card-title">🚀 Active Animal Welfare Campaigns</h3>
+          </div>
+          <div class="dash-item-grid-3">
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/cta-banner.webp" alt="Emergency Fund" class="item-card-img">
+                <span class="item-card-badge">84% Funded</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Emergency Medical Fund</h4>
+                <div class="item-card-meta">Goal: $100,000 — Raised: $84,250</div>
+                <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:84%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Funds critical surgeries, trauma care, and emergency medication for rescued animals.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-amber">16% Remaining</span>
+                  <button class="btn-dash-primary" style="padding:6px 14px;font-size:12px;">Contribute</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/howwe-3.webp" alt="Winter Drive" class="item-card-img">
+                <span class="item-card-badge">61% Funded</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">Winter Animal Food Drive</h4>
+                <div class="item-card-meta">Goal: $25,000 — Raised: $15,320</div>
+                <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:61%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Stocking nutritious food and warm bedding before the winter season begins.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-blue">Active Campaign</span>
+                  <button class="btn-dash-primary" style="padding:6px 14px;font-size:12px;">Contribute</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="dash-item-card">
+              <div class="item-card-media">
+                <img src="asset/images/mission-main.webp" alt="New Wing" class="item-card-img">
+                <span class="item-card-badge">38% Funded</span>
+              </div>
+              <div class="item-card-body">
+                <h4 class="item-card-title">New Sanctuary Wing Build</h4>
+                <div class="item-card-meta">Goal: $200,000 — Raised: $76,000</div>
+                <div style="height:6px;background:#e2e8f0;border-radius:999px;margin:8px 0;overflow:hidden;"><div style="width:38%;height:100%;background:linear-gradient(90deg,var(--dash-primary),var(--dash-gold));border-radius:999px;"></div></div>
+                <p style="font-size:13px;color:var(--dash-text-muted);margin-bottom:12px;">Building an 80-animal capacity extension to house more rescued animals safely.</p>
+                <div class="item-card-footer">
+                  <span class="status-pill status-blue">Active Campaign</span>
+                  <button class="btn-dash-primary" style="padding:6px 14px;font-size:12px;">Contribute</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================
+           TAB 5 — SPONSOR TIER
+           ================================================ -->
+      <section id="tab-tier" class="dash-tab-pane">
+        <div class="dash-content-card">
+          <div class="dash-card-header-row">
+            <div>
+              <h3 class="dash-card-title">⭐ My Sponsor Membership — Protector Tier</h3>
+              <p style="font-size:13.5px;color:var(--dash-text-muted);margin-top:4px;">Currently on <strong>Protector ($49/mo)</strong>. Upgrade to Champion for maximum impact and VIP benefits.</p>
+            </div>
+            <div class="dash-card-actions">
+              <button class="btn-dash-primary" style="background:var(--dash-gold);color:#071c19;">⬆ Upgrade to Champion</button>
+            </div>
+          </div>
+
+          <div class="tier-grid" style="margin-bottom:28px;">
+            <div class="tier-card">
+              <div class="tier-icon">🌿</div>
+              <div class="tier-name">Guardian</div>
+              <div class="tier-price">$19<span style="font-size:13px;font-weight:500;color:var(--dash-text-muted);">/mo</span></div>
+              <div class="tier-desc">Monthly food donation + name on sanctuary donor board</div>
+            </div>
+            <div class="tier-card current">
+              <div class="tier-current-tag">Your Current Plan</div>
+              <div class="tier-icon">💛</div>
+              <div class="tier-name">Protector</div>
+              <div class="tier-price">$49<span style="font-size:13px;font-weight:500;">/mo</span></div>
+              <div class="tier-desc">Guardian benefits + surgery fund contributions + monthly animal update reports</div>
+            </div>
+            <div class="tier-card">
+              <div class="tier-icon">🏆</div>
+              <div class="tier-name">Champion</div>
+              <div class="tier-price">$99<span style="font-size:13px;font-weight:500;color:var(--dash-text-muted);">/mo</span></div>
+              <div class="tier-desc">All tiers + named sanctuary room + VIP facility visits + annual transparency report</div>
+            </div>
+          </div>
+
+          <h4 style="font-weight:700;color:var(--dash-text);margin-bottom:16px;">✅ Your Active Protector Benefits</h4>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;">
+            <div style="background:#f8fafc;border:1px solid var(--dash-border);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:26px;margin-bottom:6px;">📸</div>
+              <div style="font-weight:700;font-size:13.5px;">Monthly Pet Photo Updates</div>
+              <div style="font-size:12px;color:var(--dash-text-muted);margin-top:4px;">Photos of your sponsored animals every month</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid var(--dash-border);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:26px;margin-bottom:6px;">🩺</div>
+              <div style="font-weight:700;font-size:13.5px;">Surgery Fund Contribution</div>
+              <div style="font-size:12px;color:var(--dash-text-muted);margin-top:4px;">Your funds directly cover emergency surgeries</div>
+            </div>
+            <div style="background:#f8fafc;border:1px solid var(--dash-border);border-radius:12px;padding:16px;text-align:center;">
+              <div style="font-size:26px;margin-bottom:6px;">🏅</div>
+              <div style="font-weight:700;font-size:13.5px;">Sanctuary Donor Board</div>
+              <div style="font-size:12px;color:var(--dash-text-muted);margin-top:4px;">Name displayed at the physical sanctuary entrance</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /.dashboard-content-viewport -->
+  </main>
+
+</div><!-- /.dashboard-layout -->
+
+<script src="asset/js/dashboard.js"></script>
+  <script src="asset/js/redirect-404.js" defer></script>
+</body>
+</html>
